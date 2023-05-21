@@ -1,0 +1,9 @@
+.landing {
+  --font-color: #f1f5f9;
+  --bright-white: white;
+}
+
+.description,
+h1 {
+  color: var(--font-color);
+}

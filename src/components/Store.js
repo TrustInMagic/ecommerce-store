@@ -1,19 +1,23 @@
-import React from "react"
-import Nav from "./Nav"
+import React from 'react';
+import Nav from './Nav';
+import styles from '../styles/Store.module.css'
 
 const Store = () => {
   const leftNavButtons = [
-    { name: 'Game Store', href: '/', iconSrc: '' },
-    { name: 'Search Bar', href: '', iconSrc: '' },
+    { name: 'Game Store', href: '/', iconSrc: './assets/icons/game-store.svg' },
+    { name: 'Search Bar', href: '', iconSrc: './assets/icons/search.svg' },
   ];
 
   const rightNavButtons = [
-    { name: 'trustinmagic', href: '', iconSrc: '' },
-    { name: 'cart', href: '/cart', iconSrc: '' },
+    { name: 'trustinmagic', href: '', iconSrc: './assets/icons/github.svg' },
+    { name: 'Cart', href: '/cart', iconSrc: './assets/icons/cart.svg' },
   ];
 
-  return <Nav leftButtons={leftNavButtons} rightButtons={rightNavButtons} />;
+  return (
+    <div className={styles.store}>
+      <Nav leftButtons={leftNavButtons} rightButtons={rightNavButtons} />
+    </div>
+  );
+};
 
-}
-
-export default Store
+export default Store;

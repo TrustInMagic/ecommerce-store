@@ -1,32 +1,34 @@
 import React from 'react';
+import styles from '../styles/Nav.module.css';
 
 const Nav = ({ leftButtons, rightButtons }) => {
   return (
-    <div className='nav'>
-      <div className='nav-left'>
+    <div className={styles.nav}>
+      <div className={styles.left}>
         {leftButtons.map((button) => {
           return button.name !== 'Search Bar' ? (
-            <a className='nav-button' key={button.name} href={button.href}>
+            <a className={styles.button} key={button.name} href={button.href}>
               <img src={button.iconSrc} alt='' />
-              <div className='button-name'>{button.name}</div>
+              <div className={styles['button-name']}>{button.name}</div>
             </a>
           ) : (
-            <input
-              type='search'
-              placeholder='Search Games...'
-              key={button.name}
-            />
+            <div className={styles.search} key={button.name}>
+              <input type='search' placeholder='Search Games...' />
+              <img src={button.iconSrc} alt='' />
+            </div>
           );
         })}
       </div>
-      {rightButtons.map((button) => {
-        return (
-          <a className='nav-button' key={button.name} href={button.href}>
-            <img src={button.iconSrc} alt='' />
-            <div className='button-name'>{button.name}</div>
-          </a>
-        );
-      })}
+      <div className={styles.right}>
+        {rightButtons.map((button) => {
+          return (
+            <a className={styles.button} key={button.name} href={button.href}>
+              <img src={button.iconSrc} alt='' />
+              <div className={styles['button-name']}>{button.name}</div>
+            </a>
+          );
+        })}
+      </div>
     </div>
   );
 };
