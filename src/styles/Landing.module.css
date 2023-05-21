@@ -1,9 +1,43 @@
 .landing {
-  --font-color: #f1f5f9;
+  --font-color: #e2e8f0;
   --bright-white: white;
+  --modal-background: #64748b;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .description,
 h1 {
   color: var(--font-color);
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+.video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.main-banner {
+  background-color: rgba(132, 127, 127, 0.6);
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+  padding: 30px;
+  height: 250px;
+  width: 600px;
 }

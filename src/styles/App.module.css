@@ -2,10 +2,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: black;
 }
 
+@font-face {
+  font-family: gtamerica;
+  src: url(../../public/assets/fonts/gtamerica.ttf);
+}
 
-body {
+body { 
+  height: 100vh;
+  font-size: 1.2rem;
+  font-family: gtamerica;
+}
+
+.app {
   padding: 20px 40px;
+  height: 100%
 }
+
