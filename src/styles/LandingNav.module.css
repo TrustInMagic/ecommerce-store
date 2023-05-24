@@ -1,0 +1,78 @@
+.bottom-nav,
+.right-nav {
+  --button-background: #f8fafc;
+  --font-color: #020617;
+
+  background-color: rgba(132, 127, 127, 0.6);
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+}
+
+img {
+  height: 20px;
+  width: 20px;
+}
+
+.button {
+  display: flex;
+  gap: 8px;
+  background-color: var(--button-background);
+  border-radius: 15px;
+  text-decoration: none;
+  color: var(--font-color);
+  padding: 5px;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  max-height: 40px;
+}
+
+.button:hover {
+  background-color: #22d3ee;
+  transform: scale(105%);
+  transition: background-color 0.3s, transform 0.3s;  
+}
+
+/* bottom nav */
+
+.bottom-nav {
+  width: 600px;
+  padding: 15px 20px;
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bottom-nav .button-container {
+  display: flex;
+  gap: 10px;
+}
+
+/* right nav */
+
+.right-nav {
+  justify-self: end;
+  grid-row: 1 / 5;
+  grid-column: 2 / 3;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 25px;
+  gap: 20px;
+}
+
+.right-nav .button-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+}
+
+.title {
+  color: white;
+  font-weight: 900;
+  align-self: center;
+  font-size: 1.7rem;
+}

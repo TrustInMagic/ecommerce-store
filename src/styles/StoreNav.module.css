@@ -1,0 +1,41 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  --light-black: #27272a;
+}
+
+.filter,
+.genre {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filters,
+.genres {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.nav img {
+  background-color: var(--light-black);
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.nav h3 {
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+.filter:hover img,
+.genre:hover img {
+  filter: invert(10);
+  transition: filter 0.3s;
+}

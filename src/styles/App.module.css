@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: gtamerica;
+  src: url(../../public/assets/fonts/gtamerica.ttf);
+}
+
+body { 
+  height: 100vh;
+  font-size: 1.2rem;
+  font-family: gtamerica;
+}
+
+.app {
+  height: 100%
+}
+

@@ -1,0 +1,30 @@
+.store {
+  height: 100%;
+  padding: 20px 40px;
+  background-color: black;
+  color: white;  
+}
+
+.content {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 0.5fr 4fr;
+}
+
+.mid-content {
+  margin-left: 80px
+}
+
+.store h2 {
+  font-size: 3.2rem;
+  font-weight: 1000;
+}
+
+/* cards */
+
+.collection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin-top: 20px;
+  gap: 20px;
+}

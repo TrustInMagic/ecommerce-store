@@ -1,0 +1,46 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  --light-black: #27272a;
+  --lighter-black: #3f3f46;
+  --font-color: #fff;
+}
+
+.nav svg {
+  height: 50px;
+  width: 50px;
+}
+
+.left-nav,
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav button {
+  background-color: var(--light-black);
+  border: none;
+  color: var(--font-color);
+  height: 40px;
+  width: 150px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.nav button:hover {
+  background-color: var(--lighter-black);
+}
+
+.nav button:active {
+  transform: scale(0.95);
+  transition: transform 0.2s;
+}
+
+.nav svg {
+  background-color: var(--light-black);
+  padding: 6px;
+  border-radius: 10px;
+}
