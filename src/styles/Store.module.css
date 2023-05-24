@@ -10,3 +10,12 @@
   display: grid;
   grid-template-columns: 0.5fr 4fr;
 }
+
+.mid-content {
+  margin-left: 80px
+}
+
+.store h2 {
+  font-size: 3.2rem;
+  font-weight: 1000;
+}
