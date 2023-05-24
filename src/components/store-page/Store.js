@@ -1,5 +1,7 @@
 import React from 'react';
 import Nav from '../Nav';
+import StoreNav from './StoreNav';
+import Footer from './Footer';
 import styles from '../../styles/Store.module.css';
 
 const Store = () => {
@@ -16,6 +18,11 @@ const Store = () => {
   return (
     <div className={styles.store}>
       <Nav leftButtons={leftNavButtons} rightButtons={rightNavButtons} />
+      <div className={styles.content}>
+        <StoreNav />
+        <div className={styles['mid-content']}></div>
+      </div>
+      <Footer/>
     </div>
   );
 };

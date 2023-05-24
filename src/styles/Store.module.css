@@ -2,4 +2,11 @@
   height: 100%;
   padding: 20px 40px;
   background-color: black;
+  color: white;  
+}
+
+.content {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 0.5fr 4fr;
 }

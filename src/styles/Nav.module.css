@@ -1,3 +1,11 @@
+.nav {
+  width: 100%;
+  justify-content: space-between;
+
+  --font-color: #fff;
+  --light-black: #27272a;
+}
+
 .nav,
 .left,
 .right {
@@ -5,9 +13,13 @@
   gap: 40px;
 }
 
-.nav {
-  width: 100%;
-  justify-content: space-between;
+.left {
+  flex: 1;
+}
+
+.right {
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .button {
@@ -23,9 +35,37 @@
 
 .nav a {
   text-decoration: none;
-  color: white
+  color: var(--font-color);
 }
 
 .button-name {
   font-weight: 900;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 5px;
+}
+
+.search input {
+  flex: 1;
+  height: 25px;
+  border-radius: 10px;
+  background-color: var(--light-black);
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0px 15px;
+}
+
+.search img {
+  cursor: pointer;
+}
+
+.search input:active {
+  transform: scale(0.99);
+  transition: transform 0.3s;
 }
