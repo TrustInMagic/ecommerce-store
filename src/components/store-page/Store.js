@@ -1,6 +1,6 @@
 import React from 'react';
-import Nav from './Nav';
-import styles from '../styles/Store.module.css'
+import Nav from '../Nav';
+import styles from '../../styles/Store.module.css';
 
 const Store = () => {
   const leftNavButtons = [

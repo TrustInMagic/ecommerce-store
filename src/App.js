@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Landing from './components/Landing';
-import Shop from './components/Store';
+import Landing from './components/landing-page/Landing';
+import Store from './components/store-page/Store';
 import styles from './styles/App.module.css';
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Landing />} />
-          <Route path='/store' element={<Shop />} />
+          <Route path='/store' element={<Store />} />
         </Routes>
       </BrowserRouter>
     </div>
