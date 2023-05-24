@@ -6,6 +6,11 @@ const CustomSvg = ({ fill, path, stroke, strokeWidth }) => {
       <g>
         <path d={path} stroke={stroke} strokeWidth={strokeWidth} />
       </g>
+      <g
+        id='SVGRepo_tracerCarrier'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+      />
     </svg>
   );
 };

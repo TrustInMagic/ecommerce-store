@@ -1,0 +1,60 @@
+.card {
+  background-color: var(--light-black);
+  border-radius: 15px;
+  max-width: 400px;
+  cursor: pointer;
+
+  --font-color: #fff;
+  --light-black: #27272a;
+  --lighter-black: #3f3f46;
+  --violet: #9333ea;
+  --gray: #71717a;
+}
+
+.card:hover {
+  background-color: var(--lighter-black);
+  transform: scale(1.01);
+  transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.buy {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.content {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.add {
+  cursor: pointer;
+  color: var(--gray);
+  font-size: '0.9rem';
+}
+
+.add:hover {
+  color: var(--violet);
+}
+
+.card h3 {
+  margin-top: 5px;
+}
+
+.card .svg-container,
+.card svg {
+  height: 20px;
+  width: 20px;
+  align-self: flex-end;
+  cursor: pointer;
+  margin: 8px 0px;
+}

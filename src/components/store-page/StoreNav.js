@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../styles/StoreNav.module.css';
 
-const StoreNav = () => {
+const StoreNav = ({ filterBy, currentFilter }) => {
   const filters = [
     { name: 'Wishlist', iconSrc: './assets/icons/wishlist.svg' },
     { name: 'Ratings', iconSrc: './assets/icons/ratings.svg' },
@@ -19,16 +19,32 @@ const StoreNav = () => {
     { name: 'Sports', iconSrc: './assets/icons/sports.svg' },
   ];
 
+  
+
   return (
     <div className={styles.nav}>
       <h3>Filters</h3>
       <div className={styles.filters}>
-        {filters.map((filter) => (
-          <div className={styles.filter} key={filter.name}>
+        {filters.map((filter) => { 
+          console.log(currentFilter, filter.name)
+        return (
+          <div
+            style={
+              currentFilter === filter.name
+                ? { filter: 'invert(10)', transition: 'filter 0.3s' }
+                : {}
+            }
+            className={styles.filter}
+            key={filter.name}
+            onClick={() => {
+              filterBy(filter.name);
+            }}
+          >
             <img src={filter.iconSrc} alt='' />
             <div className={styles['filter-name']}>{filter.name}</div>
           </div>
-        ))}
+        );
+        })}
       </div>
       <h3>Genres</h3>
       <div className={styles.genres}>

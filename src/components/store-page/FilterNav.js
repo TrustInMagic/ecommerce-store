@@ -2,7 +2,7 @@ import React from 'react';
 import CustomSvg from '../../helper-components/CustomSvg';
 import styles from '../../styles/FilterNav.module.css';
 
-const FilterNav = ({ filter }) => {
+const FilterNav = ({ filter, clearFilter }) => {
   const gray = '#71717a';
 
   return (
@@ -11,7 +11,9 @@ const FilterNav = ({ filter }) => {
         <button>
           Filter by: <span style={{ fontWeight: '900' }}>{filter}</span>
         </button>
-        <button style={{ fontWeight: '900' }}>Clear Filter</button>
+        <button style={{ fontWeight: '900' }} onClick={clearFilter}>
+          Clear Filter
+        </button>
       </div>
       <div className={styles['right-nav']}>
         <span style={{ color: gray }}>Display options:</span>
