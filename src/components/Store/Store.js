@@ -5,21 +5,16 @@ import Footer from '../Footer/Footer';
 import FilterNav from '../FilterNav/FilterNav';
 import GameCard from '../GameCard/GameCard';
 import games from '../../data-structures/games';
+import FilterError from '../FilterError/FilterError';
+import { rightNavButtons, leftNavButtons } from './store.config';
 import styles from './Store.module.css';
 
 const Store = () => {
   const [displayedGames, setDisplayedGames] = React.useState(games);
   const [filter, setFilter] = React.useState('none');
-
-  const leftNavButtons = [
-    { name: 'Game Store', href: '/', iconSrc: './assets/icons/game-store.svg' },
-    { name: 'Search Bar', href: '', iconSrc: './assets/icons/search.svg' },
-  ];
-
-  const rightNavButtons = [
-    { name: 'trustinmagic', href: '', iconSrc: './assets/icons/github.svg' },
-    { name: 'Cart', href: '/cart', iconSrc: './assets/icons/cart.svg' },
-  ];
+  // first element of the error var will always be the main error message
+  // subsequent elements will represent notes or additional messages.
+  const [error, setError] = React.useState(null);
 
   const handleWishList = (gameName, action) => {
     for (let game of games) {
@@ -34,20 +29,51 @@ const Store = () => {
       case 'Wishlist':
         filterByWishlist();
         break;
-      default:
+      case 'Ratings':
+        sortByRatings();
         break;
+      case 'Reviews':
+        sortByReviews();
+        break;
+      default:
+        filterByGenre(filter);
     }
-  };
-
-  const clearFilter = () => {
-    setDisplayedGames(games);
-    setFilter('none');
   };
 
   const filterByWishlist = () => {
     const filteredGames = games.filter((game) => game.wishList === true);
     setDisplayedGames(filteredGames);
-    setFilter('WishList');
+    setFilter('Wishlist');
+  };
+
+  const sortByRatings = () => {
+    const sortedGames = [...games].sort((a, b) => b.rating - a.rating);
+    setDisplayedGames(sortedGames);
+    setFilter('Ratings');
+  };
+
+  const sortByReviews = () => {
+    setFilter('Reviews');
+    for (let game of displayedGames) {
+      if (game.reviews) {
+        const sortedGames = [...games].sort((a, b) => b.reviews - a.reviews);
+        setDisplayedGames(sortedGames);
+      } else {
+        setDisplayedGames('no-reviews');
+        setError(['There are no reviews yet!', 'You can add some, soon.']);
+      }
+    }
+  };
+
+  const filterByGenre = (genre) => {
+    const filteredGames = games.filter((game) => game.more.mainGenre === genre);
+    setDisplayedGames(filteredGames);
+    setFilter(genre);
+  };
+
+  const clearFilter = () => {
+    setDisplayedGames(games);
+    setFilter('none');
   };
 
   return (
@@ -60,13 +86,17 @@ const Store = () => {
           <span>Based on player counts and ratings</span>
           <FilterNav filter={filter} clearFilter={clearFilter} />
           <div className={styles.collection}>
-            {displayedGames.map((game) => (
-              <GameCard
-                game={game}
-                key={game.name}
-                handleWishList={handleWishList}
-              />
-            ))}
+            {typeof displayedGames === 'object' ? (
+              displayedGames.map((game) => (
+                <GameCard
+                  game={game}
+                  key={game.name}
+                  handleWishList={handleWishList}
+                />
+              ))
+            ) : (
+              <FilterError error={error} />
+            )}
           </div>
         </div>
       </div>
