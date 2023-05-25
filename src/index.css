@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-color: #fff;
+  --bright-white: white;
+  --light-black: #27272a;
+  --lighter-black: #3f3f46;
+  --violet: #9333ea;
+  --gray: #71717a;
+  --landing-button-background: #f8fafc;
+  --landing-button: #020617;
+}
+
+@font-face {
+  font-family: gtamerica;
+  src: url(../public/assets/fonts/gtamerica.ttf);
+}
+
+body {
+  height: 100vh;
+  font-size: 1.2rem;
+  font-family: gtamerica;
+}
+
+.app {
+  height: 100%;
+}

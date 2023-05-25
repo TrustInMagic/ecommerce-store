@@ -1,11 +1,11 @@
 import React from 'react';
-import Nav from '../Nav';
-import StoreNav from './StoreNav';
-import Footer from './Footer';
-import FilterNav from './FilterNav';
-import GameCard from './GameCard';
+import Nav from '../Nav/Nav';
+import StoreNav from '../StoreNav/StoreNav';
+import Footer from '../Footer/Footer';
+import FilterNav from '../FilterNav/FilterNav';
+import GameCard from '../GameCard/GameCard';
 import games from '../../data-structures/games';
-import styles from '../../styles/Store.module.css';
+import styles from './Store.module.css';
 
 const Store = () => {
   const [displayedGames, setDisplayedGames] = React.useState(games);

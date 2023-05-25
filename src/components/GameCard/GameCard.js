@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/GameCard.module.css';
+import styles from './GameCard.module.css';
 import CustomSvg from '../../helper-components/CustomSvg';
 
 const GameCard = ({ game, handleWishList }) => {

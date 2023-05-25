@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Landing from './components/landing-page/Landing';
-import Store from './components/store-page/Store';
-import styles from './styles/App.module.css';
+import Landing from './components/Landing/Landing'
+import Store from './components/Store/Store';
+import './index.css'
 
 const App = () => {
   return (
-    <div className={styles.app}>
+    <div className='app'>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Landing />} />

@@ -2,10 +2,6 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-
-  --light-black: #27272a;
-  --lighter-black: #3f3f46;
-  --font-color: #fff;
 }
 
 .nav svg {

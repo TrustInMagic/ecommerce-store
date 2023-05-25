@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/StoreNav.module.css';
+import styles from './StoreNav.module.css';
 
 const StoreNav = ({ filterBy, currentFilter }) => {
   const filters = [

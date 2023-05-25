@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/LandingNav.module.css';
+import styles from './LandingNav.module.css';
 
 const LandingNav = ({ buttons, title, position }) => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import CustomSvg from '../../helper-components/CustomSvg';
-import styles from '../../styles/FilterNav.module.css';
+import styles from './FilterNav.module.css';
 
 const FilterNav = ({ filter, clearFilter }) => {
   const gray = '#71717a';
