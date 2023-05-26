@@ -9,7 +9,10 @@ const FilterNav = ({ filter, clearFilter }) => {
     <div className={styles.nav}>
       <div className={styles['left-nav']}>
         <button>
-          Filter by: <span style={{ fontWeight: '900' }}>{filter}</span>
+          Filter by:{' '}
+          <span className={styles.filter} data-testid='filter-span'>
+            {filter}
+          </span>
         </button>
         <button style={{ fontWeight: '900' }} onClick={clearFilter}>
           Clear Filter
