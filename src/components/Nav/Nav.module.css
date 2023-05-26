@@ -70,3 +70,7 @@
   transform: scale(0.99);
   transition: transform 0.3s;
 }
+
+.button {
+  cursor: pointer;
+}

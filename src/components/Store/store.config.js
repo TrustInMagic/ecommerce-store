@@ -5,7 +5,7 @@ const leftNavButtons = [
 
 const rightNavButtons = [
   { name: 'trustinmagic', href: '', iconSrc: './assets/icons/github.svg' },
-  { name: 'Cart', href: '/cart', iconSrc: './assets/icons/cart.svg' },
+  { name: 'Cart', iconSrc: './assets/icons/cart.svg' },
 ];
 
 export { leftNavButtons, rightNavButtons };

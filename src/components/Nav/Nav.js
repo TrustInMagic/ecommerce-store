@@ -13,7 +13,7 @@ const Nav = ({
       <div className={styles.left}>
         {leftButtons.map((button) => {
           return button.name !== 'Search Bar' ? (
-            <a className={styles.button} key={button.name} href={button.href}>
+            <a className={styles.button} key={button.name} href={button?.href}>
               <img src={button.iconSrc} alt='' />
               <div className={styles['button-name']}>{button.name}</div>
             </a>
