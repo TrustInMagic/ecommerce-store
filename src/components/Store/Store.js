@@ -15,11 +15,16 @@ const Store = () => {
   const [error, setError] = React.useState(null);
   const [display, setDisplay] = React.useState('grid');
   const [query, setQuery] = React.useState('');
+  const [wishList, setWishList] = React.useState([]);
 
-  const handleWishList = (gameName, action) => {
-    for (let game of games) {
-      if (game.name === gameName) {
-        action === 'add' ? (game.wishList = true) : (game.wishList = false);
+  const handleWishList = (clickedGame) => {
+    setWishList((prevWishList) => [clickedGame, ...prevWishList]);
+    
+    const wishListCopy = [...wishList];
+    for (let i = 0; i < wishListCopy.length; i++) {
+      if (wishListCopy[i].name === clickedGame.name) {
+        wishListCopy.splice(i, 1);
+        setWishList(wishListCopy);
       }
     }
   };
@@ -133,7 +138,7 @@ const Store = () => {
                   game={game}
                   key={game.name}
                   handleWishList={handleWishList}
-                  wishList={game.wishList}
+                  wishList={wishList}
                 />
               ))
             ) : (
