@@ -19,7 +19,7 @@ const Store = () => {
 
   const handleWishList = (clickedGame) => {
     setWishList((prevWishList) => [clickedGame, ...prevWishList]);
-    
+
     const wishListCopy = [...wishList];
     for (let i = 0; i < wishListCopy.length; i++) {
       if (wishListCopy[i].name === clickedGame.name) {
@@ -46,9 +46,8 @@ const Store = () => {
   };
 
   const filterByWishlist = () => {
-    const filteredGames = games.filter((game) => game.wishList === true);
-    setDisplayedGames(filteredGames);
-    setFilter('Wishlist');
+    setDisplayedGames(wishList);
+    
   };
 
   const sortByRatings = () => {
