@@ -18,6 +18,7 @@ const games = [
       './assets/game-img/cyberpunk/cyberpunk_3.jpg',
       './assets/game-img/cyberpunk/cyberpunk_4.jpg',
     ],
+    rating: 6.9
   },
   {
     name: 'Battlefield V',
@@ -38,6 +39,7 @@ const games = [
       './assets/game-img/battlefield/battlefield_3.jpg',
       './assets/game-img/battlefield/battlefield_4.jpg',
     ],
+    rating: 7.8
   },
 ];
 

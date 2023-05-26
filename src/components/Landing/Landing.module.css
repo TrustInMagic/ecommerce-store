@@ -1,6 +1,4 @@
 .landing {
-  --bright-white: white;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,7 +8,7 @@
 
 .description,
 h1 {
-  color: var(--bright-white);
+  color: var(--font-color);
 }
 
 h1 {

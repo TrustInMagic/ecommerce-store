@@ -1,8 +1,5 @@
 .bottom-nav,
 .right-nav {
-  --button-background: #f8fafc;
-  --font-color: #020617;
-
   background-color: rgba(132, 127, 127, 0.6);
   backdrop-filter: blur(5px);
   border-radius: 30px;
@@ -16,10 +13,10 @@ img {
 .button {
   display: flex;
   gap: 8px;
-  background-color: var(--button-background);
+  background-color: var(--landing-button-background);
   border-radius: 15px;
   text-decoration: none;
-  color: var(--font-color);
+  color: var(--landing-button);
   padding: 5px;
   flex: 1;
   align-items: center;
