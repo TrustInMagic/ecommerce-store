@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './GameCard.module.css';
 import CustomSvg from '../../helper-components/CustomSvg';
 
-const GameCard = ({ game, handleWishList }) => {
+const GameCard = ({ game, handleWishList, wishList }) => {
   const [liked, setLiked] = React.useState(false);
 
   const handleLiked = () => {
@@ -23,7 +23,7 @@ const GameCard = ({ game, handleWishList }) => {
         <h3>{game.name}</h3>
         <div className={styles['svg-container']} onClick={handleLiked}>
           <CustomSvg
-            fill={liked ? 'red' : 'white'}
+            fill={wishList ? 'red' : 'white'}
             path='M12.39 20.87a.696.696 0 0 1-.78 0C9.764 19.637 2 14.15 2 8.973c0-6.68 7.85-7.75 10-3.25 2.15-4.5 10-3.43 10 3.25 0 5.178-7.764 10.664-9.61 11.895z'
           />
         </div>

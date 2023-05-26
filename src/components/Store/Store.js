@@ -13,6 +13,8 @@ const Store = () => {
   const [displayedGames, setDisplayedGames] = React.useState(games);
   const [filter, setFilter] = React.useState('none');
   const [error, setError] = React.useState(null);
+  const [display, setDisplay] = React.useState('grid');
+  const [query, setQuery] = React.useState('');
 
   const handleWishList = (gameName, action) => {
     for (let game of games) {
@@ -52,7 +54,7 @@ const Store = () => {
 
   const sortByReviews = () => {
     setFilter('Reviews');
-    for (let game of displayedGames) {
+    for (let game of games) {
       if (game.reviews) {
         const sortedGames = [...games].sort((a, b) => b.reviews - a.reviews);
         setDisplayedGames(sortedGames);
@@ -75,24 +77,63 @@ const Store = () => {
   const clearFilter = () => {
     setDisplayedGames(games);
     setFilter('none');
+    setQuery('');
+  };
+
+  const changeDisplay = (display) => {
+    setDisplay(display);
+  };
+
+  const handleSearch = () => {
+    const searchedGames = [];
+    for (let game of games) {
+      if (game.name.toLocaleLowerCase().includes(query)) {
+        searchedGames.push(game);
+      }
+    }
+
+    setDisplayedGames(searchedGames);
+  };
+
+  const handleQuery = (message) => {
+    if (message.length === 0) setDisplayedGames(games);
+    setQuery(message);
   };
 
   return (
     <div className={styles.store}>
-      <Nav leftButtons={leftNavButtons} rightButtons={rightNavButtons} />
+      <Nav
+        leftButtons={leftNavButtons}
+        rightButtons={rightNavButtons}
+        handleSearch={handleSearch}
+        handleQuery={handleQuery}
+        query={query}
+      />
       <div className={styles.content}>
         <StoreNav filterBy={filterBy} currentFilter={filter} />
         <div className={styles['mid-content']}>
           <h2 className={styles.title}>Trending and interesting</h2>
           <span>Based on player counts and ratings</span>
-          <FilterNav filter={filter} clearFilter={clearFilter} />
-          <div className={styles.collection}>
+          <FilterNav
+            filter={filter}
+            clearFilter={clearFilter}
+            changeDisplay={changeDisplay}
+            display={display}
+          />
+          <div
+            className={
+              display === 'grid'
+                ? styles['grid-collection']
+                : styles['row-collection']
+            }
+          >
             {typeof displayedGames === 'object' ? (
               displayedGames.map((game) => (
                 <GameCard
                   game={game}
                   key={game.name}
                   handleWishList={handleWishList}
+                  wishList={game.wishList}
                 />
               ))
             ) : (
