@@ -4,8 +4,8 @@ import styles from './FilterError.module.css'
 const FilterError = ({ error }) => {
   return (
     <div className={styles.error}>
-      <h3>{error[0]}</h3>
-      <div>{error[1]}</div>
+      <h3>{error.error}</h3>
+      <div>{error.message}</div>
     </div>
   );
 };

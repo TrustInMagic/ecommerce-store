@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import StoreNav from './StoreNav';
 
 describe('StoreNav', () => {
-  it('inverts styles of the clicked button', () => {
+  it('inverts styles of the active filter button', () => {
     const mockCurrentFilter = 'Wishlist';
 
     render(<StoreNav currentFilter={mockCurrentFilter} />);

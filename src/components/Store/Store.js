@@ -12,8 +12,6 @@ import styles from './Store.module.css';
 const Store = () => {
   const [displayedGames, setDisplayedGames] = React.useState(games);
   const [filter, setFilter] = React.useState('none');
-  // first element of the error var will always be the main error message
-  // subsequent elements will represent notes or additional messages.
   const [error, setError] = React.useState(null);
 
   const handleWishList = (gameName, action) => {
@@ -60,7 +58,10 @@ const Store = () => {
         setDisplayedGames(sortedGames);
       } else {
         setDisplayedGames('no-reviews');
-        setError(['There are no reviews yet!', 'You can add some, soon.']);
+        setError({
+          error: 'There are no reviews yet!',
+          message: 'You can add some, soon.',
+        });
       }
     }
   };
