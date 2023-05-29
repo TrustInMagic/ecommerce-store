@@ -6,32 +6,49 @@ import Cart from './components/Cart/Cart';
 import './index.css';
 
 const App = () => {
-  const [isCartVisible, setCartVisible] = React.useState(false);
-  const [blur, setBlur] = React.useState(false);
-  const [cartContent, setCartContent] = React.useState([]);
+  const useCart = () => {
+    const [isCartVisible, setCartVisible] = React.useState(false);
+    const [cartContent, setCartContent] = React.useState([]);
 
-  const openCart = () => {
-    setCartVisible(true);
-    setBlur(true);
+    const openCart = () => {
+      setCartVisible(true);
+    };
+
+    const closeCart = () => {
+      setCartVisible(false);
+    };
+
+    const addToCart = (game) => {
+      setCartContent((prevContent) => [
+        { name: game.name, price: game.price },
+        ...prevContent,
+      ]);
+    };
+
+    const removeFromCart = (game) => {
+      setCartContent((prevContent) =>
+        prevContent.filter((iteratedGame) => iteratedGame.name !== game.name)
+      );
+    };
+
+    return {
+      isCartVisible,
+      openCart,
+      closeCart,
+      cartContent,
+      addToCart,
+      removeFromCart,
+    };
   };
 
-  const closeCart = () => {
-    setCartVisible(false);
-    setBlur(false);
-  };
-
-  const addToCart = (game) => {
-    setCartContent((prevContent) => [
-      { name: game.name, price: game.price },
-      ...prevContent,
-    ]);
-  };
-
-  const removeFromCart = (game) => {
-    setCartContent((prevContent) =>
-      prevContent.filter((iteratedGame) => iteratedGame.name !== game.name)
-    );
-  };
+  const {
+    isCartVisible,
+    openCart,
+    closeCart,
+    cartContent,
+    addToCart,
+    removeFromCart,
+  } = useCart();
 
   return (
     <div className='app'>
