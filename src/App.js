@@ -45,7 +45,13 @@ const App = () => {
         <Routes>
           <Route
             path='/'
-            element={<Landing openCart={openCart} blur={blur} />}
+            element={
+              <Landing
+                openCart={openCart}
+                blur={blur}
+                cartContent={cartContent}
+              />
+            }
           />
           <Route
             path='/store'

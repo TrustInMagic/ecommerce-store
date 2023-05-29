@@ -113,6 +113,7 @@ const Store = ({ openCart, blur, addToCart, cartContent }) => {
         handleQuery={handleQuery}
         query={query}
         openCart={openCart}
+        cartContent={cartContent}
       />
       <div className={styles.content}>
         <StoreNav filterBy={filterBy} currentFilter={filter} />

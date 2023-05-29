@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Nav.module.css';
+import CartSvg from '../../helper-components/CartSvg';
 
 const Nav = ({
   leftButtons,
@@ -8,6 +9,7 @@ const Nav = ({
   handleQuery,
   query,
   openCart,
+  cartContent,
 }) => {
   return (
     <div className={styles.nav}>
@@ -42,10 +44,21 @@ const Nav = ({
               className={styles.button}
               key={button.name}
               href={button.href}
-              onClick={action ? action : null}
+              onClick={action}
             >
-              <img src={button.iconSrc} alt='' />
-              <div className={styles['button-name']}>{button.name}</div>
+              {button.name === 'Cart' ? (
+                <CartSvg full={cartContent.length > 0 ? true : false} />
+              ) : (
+                <img src={button.iconSrc} alt='' />
+              )}
+              <div className={styles['button-name']}>
+                {button.name === 'Cart' ? button.name + ':' : button.name}
+              </div>
+              {button.name === 'Cart' ? (
+                <div className={styles['button-name']}>
+                  {cartContent.length}
+                </div>
+              ) : null}
             </a>
           );
         })}

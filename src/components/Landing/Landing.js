@@ -9,7 +9,7 @@ import {
   landingBottomNavButtons,
 } from './landing.config';
 
-const Landing = ({ openCart, blur }) => {
+const Landing = ({ openCart, blur, cartContent }) => {
   return (
     <div className={`${styles.landing} ${blur ? styles.blur : ''}`}>
       <video autoPlay muted loop playsInline className={styles.video}>
@@ -22,6 +22,7 @@ const Landing = ({ openCart, blur }) => {
         leftButtons={leftNavButtons}
         rightButtons={rightNavButtons}
         openCart={openCart}
+        cartContent={cartContent}
       />
       <div className={styles.content}>
         <div className={styles['main-banner']}>
