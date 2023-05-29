@@ -13,7 +13,13 @@ const Cart = ({ isCartVisible, closeCart, content, removeFromCart }) => {
       }`}
     >
       <div className={styles.header}>
-        <div className={styles['added-games']}>No games added</div>
+        <div className={styles['added-games']}>
+          {content.length === 0
+            ? 'No games yet'
+            : content.length === 1
+            ? `${content.length} game`
+            : `${content.length} games`}
+        </div>
         <div className={styles.x} onClick={closeCart}>
           ✖
         </div>
