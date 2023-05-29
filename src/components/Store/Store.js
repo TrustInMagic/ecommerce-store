@@ -18,15 +18,17 @@ const Store = () => {
   const [wishList, setWishList] = React.useState([]);
 
   const handleWishList = (clickedGame) => {
-    setWishList((prevWishList) => [clickedGame, ...prevWishList]);
-
-    const wishListCopy = [...wishList];
-    for (let i = 0; i < wishListCopy.length; i++) {
-      if (wishListCopy[i].name === clickedGame.name) {
-        wishListCopy.splice(i, 1);
-        setWishList(wishListCopy);
+    setWishList((prevWishList) => {
+      if (
+        prevWishList.some(
+          (iteratedGame) => iteratedGame.name === clickedGame.name
+        )
+      ) {
+        return prevWishList.filter((game) => game.name !== clickedGame.name);
+      } else {
+        return [clickedGame, ...prevWishList];
       }
-    }
+    });
   };
 
   const filterBy = (filter) => {
@@ -47,7 +49,6 @@ const Store = () => {
 
   const filterByWishlist = () => {
     setDisplayedGames(wishList);
-    
   };
 
   const sortByRatings = () => {
@@ -137,7 +138,9 @@ const Store = () => {
                   game={game}
                   key={game.name}
                   handleWishList={handleWishList}
-                  wishList={wishList}
+                  isLiked={wishList.some(
+                    (iteratedGame) => iteratedGame.name === game.name
+                  )}
                 />
               ))
             ) : (
