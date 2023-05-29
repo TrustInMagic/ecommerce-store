@@ -23,7 +23,7 @@ const CartSvg = ({full}) => {
           <rect
             x='16'
             y='28'
-            fill={full ? '#22c55e' : '#000000'}
+            fill={full ? '#22c55e' : 'none'}
             width='32'
             height='28'
           />

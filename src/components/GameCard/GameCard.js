@@ -24,7 +24,7 @@ const GameCard = ({
             </div>
           )}
 
-          <div className={styles.price}>{game.price}</div>
+          <div className={styles.price}>${game.price}</div>
         </div>
         <h3>{game.name}</h3>
         <div

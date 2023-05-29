@@ -5,10 +5,15 @@ import Footer from '../Footer/Footer';
 import FilterNav from '../FilterNav/FilterNav';
 import games from '../../data-structures/games';
 import GameList from '../GameList/GameList';
-import { rightNavButtons, leftNavButtons } from './store.config';
 import styles from './Store.module.css';
 
-const Store = ({ openCart, blur, addToCart, cartContent }) => {
+const Store = ({
+  openCart,
+  isCartVisible,
+  addToCart,
+  cartContent,
+  closeCart,
+}) => {
   const [displayedGames, setDisplayedGames] = React.useState(games);
   const [filter, setFilter] = React.useState('none');
   const [error, setError] = React.useState(null);
@@ -105,40 +110,44 @@ const Store = ({ openCart, blur, addToCart, cartContent }) => {
   };
 
   return (
-    <div className={`${styles.store} ${blur ? styles.blur : ''}`}>
-      <Nav
-        leftButtons={leftNavButtons}
-        rightButtons={rightNavButtons}
-        handleSearch={handleSearch}
-        handleQuery={handleQuery}
-        query={query}
-        openCart={openCart}
-        cartContent={cartContent}
-      />
-      <div className={styles.content}>
-        <StoreNav filterBy={filterBy} currentFilter={filter} />
-        <div className={styles['mid-content']}>
-          <h2 className={styles.title}>Trending and interesting</h2>
-          <span>Based on player counts and ratings</span>
-          <FilterNav
-            filter={filter}
-            clearFilter={clearFilter}
-            changeDisplay={changeDisplay}
-            display={display}
-          />
-          <GameList
-            games={displayedGames}
-            wishList={wishList}
-            handleWishList={handleWishList}
-            error={error}
-            display={display}
-            addToCart={addToCart}
-            cartContent={cartContent}
-          />
+    <>
+      {isCartVisible ? (
+        <div className={styles.overlay} onClick={closeCart}></div>
+      ) : null}
+      <div className={`${styles.store} ${isCartVisible ? styles.blur : ''}`}>
+        <Nav
+          handleSearch={handleSearch}
+          handleQuery={handleQuery}
+          query={query}
+          openCart={openCart}
+          cartContent={cartContent}
+          isForLanding={false}
+        />
+        <div className={styles.content}>
+          <StoreNav filterBy={filterBy} currentFilter={filter} />
+          <div className={styles['mid-content']}>
+            <h2 className={styles.title}>Trending and interesting</h2>
+            <span>Based on player counts and ratings</span>
+            <FilterNav
+              filter={filter}
+              clearFilter={clearFilter}
+              changeDisplay={changeDisplay}
+              display={display}
+            />
+            <GameList
+              games={displayedGames}
+              wishList={wishList}
+              handleWishList={handleWishList}
+              error={error}
+              display={display}
+              addToCart={addToCart}
+              cartContent={cartContent}
+            />
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 

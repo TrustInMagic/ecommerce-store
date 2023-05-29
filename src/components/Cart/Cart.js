@@ -1,17 +1,15 @@
 import styles from './Cart.module.css';
 
-const Cart = ({ cartVisible, closeCart, content, removeGame }) => {
+const Cart = ({ isCartVisible, closeCart, content, removeFromCart }) => {
   const totalPrice = content.reduce(
-  // making sure to add numbers and not strings and slice each of them 
-  // to remove the '$' sign before the price
-    (total, game) => total + Number(game.price.slice(1, game.price.length)),
+    (total, game) => total + Number(game.price),
     0
   );
 
   return (
     <div
       className={`${styles.cart} ${
-        cartVisible ? styles.visible : styles.invisible
+        isCartVisible ? styles.visible : styles.invisible
       }`}
     >
       <div className={styles.header}>
@@ -24,8 +22,8 @@ const Cart = ({ cartVisible, closeCart, content, removeGame }) => {
         {content.map((game) => (
           <div className={styles.game} key={game.name}>
             <div className={styles.name}>{game.name}</div>
-            <div className={styles.price}>{game.price}</div>
-            <div className={styles.x} onClick={() => removeGame(game)}>
+            <div className={styles.price}>${game.price}</div>
+            <div className={styles.x} onClick={() => removeFromCart(game)}>
               ✕
             </div>
           </div>

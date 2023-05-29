@@ -6,7 +6,7 @@ import Cart from './components/Cart/Cart';
 import './index.css';
 
 const App = () => {
-  const [cartVisible, setCartVisible] = React.useState(false);
+  const [isCartVisible, setCartVisible] = React.useState(false);
   const [blur, setBlur] = React.useState(false);
   const [cartContent, setCartContent] = React.useState([]);
 
@@ -27,7 +27,7 @@ const App = () => {
     ]);
   };
 
-  const removeGame = (game) => {
+  const removeFromCart = (game) => {
     setCartContent((prevContent) =>
       prevContent.filter((iteratedGame) => iteratedGame.name !== game.name)
     );
@@ -36,10 +36,10 @@ const App = () => {
   return (
     <div className='app'>
       <Cart
-        cartVisible={cartVisible}
+        isCartVisible={isCartVisible}
         closeCart={closeCart}
         content={cartContent}
-        removeGame={removeGame}
+        removeFromCart={removeFromCart}
       />
       <BrowserRouter>
         <Routes>
@@ -48,8 +48,9 @@ const App = () => {
             element={
               <Landing
                 openCart={openCart}
-                blur={blur}
                 cartContent={cartContent}
+                isCartVisible={isCartVisible}
+                closeCart={closeCart}
               />
             }
           />
@@ -58,9 +59,10 @@ const App = () => {
             element={
               <Store
                 openCart={openCart}
-                blur={blur}
                 addToCart={addToCart}
                 cartContent={cartContent}
+                isCartVisible={isCartVisible}
+                closeCart={closeCart}
               />
             }
           />
