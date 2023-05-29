@@ -2,11 +2,13 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing/Landing'
 import Store from './components/Store/Store';
+import Cart from './components/Cart/Cart'
 import './index.css'
 
 const App = () => {
   return (
     <div className='app'>
+      <Cart/>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Landing />} />
