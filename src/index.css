@@ -20,12 +20,12 @@
   src: url(../public/assets/fonts/gtamerica.ttf);
 }
 
-body {
-  height: 100vh;
-  font-size: 1.2rem;
+body, 
+html,
+#root,
+.app {
+  font-size: 1.1rem;
   font-family: gtamerica;
+  min-height: 100vh
 }
 
-.app {
-  height: 100%;
-}

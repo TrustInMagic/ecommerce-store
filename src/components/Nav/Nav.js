@@ -1,7 +1,13 @@
 import React from 'react';
 import styles from './Nav.module.css';
 
-const Nav = ({ leftButtons, rightButtons }) => {
+const Nav = ({
+  leftButtons,
+  rightButtons,
+  handleSearch,
+  handleQuery,
+  query,
+}) => {
   return (
     <div className={styles.nav}>
       <div className={styles.left}>
@@ -13,8 +19,16 @@ const Nav = ({ leftButtons, rightButtons }) => {
             </a>
           ) : (
             <div className={styles.search} key={button.name}>
-              <input type='search' placeholder='Search Games...' />
-              <img src={button.iconSrc} alt='' />
+              <input
+                value={query}
+                type='search'
+                placeholder='Search Games...'
+                onChange={(e) => handleQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') handleSearch();
+                }}
+              />
+              <img src={button.iconSrc} alt='' onClick={handleSearch} />
             </div>
           );
         })}
