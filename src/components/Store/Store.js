@@ -8,7 +8,7 @@ import GameList from '../GameList/GameList';
 import { rightNavButtons, leftNavButtons } from './store.config';
 import styles from './Store.module.css';
 
-const Store = () => {
+const Store = ({ openCart, blur, addToCart, cartContent }) => {
   const [displayedGames, setDisplayedGames] = React.useState(games);
   const [filter, setFilter] = React.useState('none');
   const [error, setError] = React.useState(null);
@@ -105,13 +105,14 @@ const Store = () => {
   };
 
   return (
-    <div className={styles.store}>
+    <div className={`${styles.store} ${blur ? styles.blur : ''}`}>
       <Nav
         leftButtons={leftNavButtons}
         rightButtons={rightNavButtons}
         handleSearch={handleSearch}
         handleQuery={handleQuery}
         query={query}
+        openCart={openCart}
       />
       <div className={styles.content}>
         <StoreNav filterBy={filterBy} currentFilter={filter} />
@@ -130,6 +131,8 @@ const Store = () => {
             handleWishList={handleWishList}
             error={error}
             display={display}
+            addToCart={addToCart}
+            cartContent={cartContent}
           />
         </div>
       </div>

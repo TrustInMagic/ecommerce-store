@@ -1,4 +1,78 @@
 .cart {
   position: absolute;
-  color: var(--font-color)
+  right: 0;
+  color: var(--font-color);
+  height: 100vh;
+  width: 350px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  z-index: 2;
+}
+
+.added-games {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  color: var(--gray);
+}
+
+.checkout {
+  font-weight: 600;
+}
+
+.checkout:hover {
+  color: var(--violet);
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.x {
+  cursor: pointer;
+}
+
+.visible {
+  transform: scale(1);
+}
+
+.invisible {
+  transform: scale(0);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+  margin-top: 25px;
+  gap: 10px;
+}
+
+.game {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: var(--light-black);
+  height: 40px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--landing-button-background);
+  gap: 10px;
+}
+
+.price {
+  margin-left: auto;
 }

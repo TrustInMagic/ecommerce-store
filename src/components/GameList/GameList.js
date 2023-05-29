@@ -3,7 +3,15 @@ import GameCard from '../GameCard/GameCard';
 import FilterError from '../FilterError/FilterError';
 import styles from './GameList.module.css';
 
-const GameList = ({ games, wishList, handleWishList, error, display }) => {
+const GameList = ({
+  games,
+  wishList,
+  handleWishList,
+  error,
+  display,
+  addToCart,
+  cartContent
+}) => {
   return (
     <div
       className={
@@ -21,6 +29,8 @@ const GameList = ({ games, wishList, handleWishList, error, display }) => {
             isLiked={wishList.some(
               (iteratedGame) => iteratedGame.name === game.name
             )}
+            addToCart={addToCart}
+            cartContent={cartContent}
           />
         ))
       ) : (

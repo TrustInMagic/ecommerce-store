@@ -7,6 +7,7 @@ const Nav = ({
   handleSearch,
   handleQuery,
   query,
+  openCart,
 }) => {
   return (
     <div className={styles.nav}>
@@ -35,8 +36,14 @@ const Nav = ({
       </div>
       <div className={styles.right}>
         {rightButtons.map((button) => {
+          const action = button.name === 'Cart' ? openCart : null;
           return (
-            <a className={styles.button} key={button.name} href={button.href}>
+            <a
+              className={styles.button}
+              key={button.name}
+              href={button.href}
+              onClick={action ? action : null}
+            >
               <img src={button.iconSrc} alt='' />
               <div className={styles['button-name']}>{button.name}</div>
             </a>

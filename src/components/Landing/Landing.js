@@ -9,16 +9,20 @@ import {
   landingBottomNavButtons,
 } from './landing.config';
 
-const Landing = () => {
+const Landing = ({ openCart, blur }) => {
   return (
-    <div className={styles.landing}>
+    <div className={`${styles.landing} ${blur ? styles.blur : ''}`}>
       <video autoPlay muted loop playsInline className={styles.video}>
         <source
           src='./assets/death-knights-live-wallpaper.mp4'
           type='video/mp4'
         />
       </video>
-      <Nav leftButtons={leftNavButtons} rightButtons={rightNavButtons} />
+      <Nav
+        leftButtons={leftNavButtons}
+        rightButtons={rightNavButtons}
+        openCart={openCart}
+      />
       <div className={styles.content}>
         <div className={styles['main-banner']}>
           <h1>Game Store</h1>
