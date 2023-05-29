@@ -3,9 +3,8 @@ import Nav from '../Nav/Nav';
 import StoreNav from '../StoreNav/StoreNav';
 import Footer from '../Footer/Footer';
 import FilterNav from '../FilterNav/FilterNav';
-import GameCard from '../GameCard/GameCard';
 import games from '../../data-structures/games';
-import FilterError from '../FilterError/FilterError';
+import GameList from '../GameList/GameList';
 import { rightNavButtons, leftNavButtons } from './store.config';
 import styles from './Store.module.css';
 
@@ -125,28 +124,13 @@ const Store = () => {
             changeDisplay={changeDisplay}
             display={display}
           />
-          <div
-            className={
-              display === 'grid'
-                ? styles['grid-collection']
-                : styles['row-collection']
-            }
-          >
-            {typeof displayedGames === 'object' ? (
-              displayedGames.map((game) => (
-                <GameCard
-                  game={game}
-                  key={game.name}
-                  handleWishList={handleWishList}
-                  isLiked={wishList.some(
-                    (iteratedGame) => iteratedGame.name === game.name
-                  )}
-                />
-              ))
-            ) : (
-              <FilterError error={error} />
-            )}
-          </div>
+          <GameList
+            games={displayedGames}
+            wishList={wishList}
+            handleWishList={handleWishList}
+            error={error}
+            display={display}
+          />
         </div>
       </div>
       <Footer />
