@@ -53,6 +53,7 @@ const Store = ({
 
   const filterByWishlist = () => {
     setDisplayedGames(wishList);
+    setFilter('Wishlist')
   };
 
   const sortByRatings = () => {

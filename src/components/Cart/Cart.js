@@ -8,6 +8,7 @@ const Cart = ({ isCartVisible, closeCart, content, removeFromCart }) => {
 
   return (
     <div
+      data-testid='cart-test'
       className={`${styles.cart} ${
         isCartVisible ? styles.visible : styles.invisible
       }`}
@@ -20,16 +21,28 @@ const Cart = ({ isCartVisible, closeCart, content, removeFromCart }) => {
             ? `${content.length} game`
             : `${content.length} games`}
         </div>
-        <div className={styles.x} onClick={closeCart}>
+        <div
+          className={styles.x}
+          onClick={closeCart}
+          data-testid='close-cart-test'
+        >
           ✖
         </div>
       </div>
       <div className={styles.content}>
-        {content.map((game) => (
-          <div className={styles.game} key={game.name}>
-            <div className={styles.name}>{game.name}</div>
-            <div className={styles.price}>${game.price}</div>
-            <div className={styles.x} onClick={() => removeFromCart(game)}>
+        {content.map((game, idx) => (
+          <div className={styles.game} key={game.name} data-testid='cart-item'>
+            <div className={styles.name} data-testid={`item-name-${idx}`}>
+              {game.name}
+            </div>
+            <div className={styles.price} data-testid={`item-price-${idx}`}>
+              ${game.price}
+            </div>
+            <div
+              className={styles.x}
+              data-testid={`remove-item-${idx}`}
+              onClick={() => removeFromCart(game)}
+            >
               ✕
             </div>
           </div>
