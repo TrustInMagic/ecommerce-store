@@ -2,14 +2,29 @@ import React from 'react';
 import styles from './GameCard.module.css';
 import CustomSvg from '../../helper-components/CustomSvg';
 
-const GameCard = ({ game, handleWishList, isLiked }) => {
+const GameCard = ({
+  game,
+  handleWishList,
+  isLiked,
+  addToCart,
+  cartContent,
+}) => {
   return (
     <div className={styles.card} key={game.name}>
       <img src={game.imgUrl[0]} alt='' />
       <div className={styles.content}>
         <div className={styles.buy}>
-          <div className={styles.add}>Add to cart ➕</div>
-          <div className={styles.price}>{game.price}</div>
+          {cartContent.some(
+            (iteratedGame) => iteratedGame.name === game.name
+          ) ? (
+            <div className={styles.added}>Added ✓</div>
+          ) : (
+            <div className={styles.add} onClick={() => addToCart(game)}>
+              Add to cart ➕
+            </div>
+          )}
+
+          <div className={styles.price}>${game.price}</div>
         </div>
         <h3>{game.name}</h3>
         <div

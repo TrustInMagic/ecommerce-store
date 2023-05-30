@@ -3,46 +3,57 @@ import Nav from '../Nav/Nav';
 import styles from './Landing.module.css';
 import LandingNav from '../LandingNav/LandingNav';
 import {
-  leftNavButtons,
-  rightNavButtons,
   landingRightNavButtons,
   landingBottomNavButtons,
 } from './landing.config';
 
-const Landing = () => {
+const Landing = ({ openCart, isCartVisible, cartContent, closeCart }) => {
   return (
-    <div className={styles.landing}>
-      <video autoPlay muted loop playsInline className={styles.video}>
-        <source
-          src='./assets/death-knights-live-wallpaper.mp4'
-          type='video/mp4'
+    <>
+      {isCartVisible ? (
+        <div className={styles.overlay} onClick={closeCart}></div>
+      ) : null}
+      <div className={`${styles.landing} ${isCartVisible ? styles.blur : ''}`}>
+        <video autoPlay muted loop playsInline className={styles.video}>
+          <source
+            src='./assets/death-knights-live-wallpaper.mp4'
+            type='video/mp4'
+          />
+        </video>
+        <Nav
+          openCart={openCart}
+          cartContent={cartContent}
+          isForLanding={true}
         />
-      </video>
-      <Nav leftButtons={leftNavButtons} rightButtons={rightNavButtons} />
-      <div className={styles.content}>
-        <div className={styles['main-banner']}>
-          <h1>Game Store</h1>
-          <div className={styles.description}>
-            The best destination to buy new games to competitive prices. 24 hour
-            support, best price guarantee and a flawless UX. Wish for more? Tell
-            us below — or check out our{' '}
-            <span
-              style={{ cursor: 'pointer', color: '#22d3ee', fontWeight: '700' }}
-            >
-              careers
-            </span>
-            .
+        <div className={styles.content}>
+          <div className={styles['main-banner']}>
+            <h1>Game Store</h1>
+            <div className={styles.description}>
+              The best destination to buy new games to competitive prices. 24
+              hour support, best price guarantee and a flawless UX. Wish for
+              more? Tell us below — or check out our{' '}
+              <span
+                style={{
+                  cursor: 'pointer',
+                  color: '#22d3ee',
+                  fontWeight: '700',
+                }}
+              >
+                careers
+              </span>
+              .
+            </div>
           </div>
+          <LandingNav
+            buttons={landingRightNavButtons}
+            title='Quick Navigation'
+            position='right'
+          />
+          <LandingNav buttons={landingBottomNavButtons} position='bottom' />
         </div>
-        <LandingNav
-          buttons={landingRightNavButtons}
-          title='Quick Navigation'
-          position='right'
-        />
-        <LandingNav buttons={landingBottomNavButtons} position='bottom' />
+        <span />
       </div>
-      <span />
-    </div>
+    </>
   );
 };
 

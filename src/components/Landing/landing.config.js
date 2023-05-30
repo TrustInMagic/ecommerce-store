@@ -1,40 +1,67 @@
-const leftNavButtons = [
-  { name: 'Game Store', href: '/', iconSrc: './assets/icons/game-store.svg' },
+const landingBottomNavButtons = [
   {
-    name: 'Browse Store',
+    name: 'Browse',
     href: '/store',
-    iconSrc: './assets/icons/browse-store.svg',
+    iconSrc: './assets/icons/browse.svg',
+    internal: true,
+  },
+  {
+    name: 'Play Dice',
+    href: '',
+    iconSrc: './assets/icons/dice.svg',
+    internal: true,
+  },
+  {
+    name: 'GitHub',
+    href: 'https://github.com/TrustInMagic',
+    iconSrc: './assets/icons/github2.svg',
+    internal: false,
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/tim-ionescu-650a78110/',
+    iconSrc: './assets/icons/linkedin.svg',
+    internal: false,
   },
 ];
 
-const rightNavButtons = [
-  { name: 'trustinmagic', href: '', iconSrc: './assets/icons/github.svg' },
-  { name: 'Cart', href: '/cart', iconSrc: './assets/icons/cart.svg' },
-];
-
-const landingBottomNavButtons = [
-  { name: 'Browse', href: '/store', iconSrc: './assets/icons/browse.svg' },
-  { name: 'Play Dice', href: '', iconSrc: './assets/icons/dice.svg' },
-  { name: 'GitHub', href: '', iconSrc: './assets/icons/github2.svg' },
-  { name: 'LinkedIn', href: '', iconSrc: './assets/icons/linkedin.svg' },
-];
-
 const landingRightNavButtons = [
-  { name: 'Game Page', href: '', iconSrc: './assets/icons/game.svg' },
-  { name: '404 Page', href: '', iconSrc: './assets/icons/404.svg' },
-  { name: 'Commit Log', href: '', iconSrc: './assets/icons/git-commit.svg' },
+  {
+    name: 'Game Page',
+    href: './store',
+    iconSrc: './assets/icons/game.svg',
+    internal: true,
+  },
+  {
+    name: '404 Page',
+    href: '',
+    iconSrc: './assets/icons/404.svg',
+    internal: true,
+  },
+  {
+    name: 'Commit Log',
+    href: 'https://github.com/TrustInMagic/react-ecommerce-store/commits',
+    iconSrc: './assets/icons/git-commit.svg',
+    internal: false,
+  },
   {
     name: 'Performance',
     href: '',
     iconSrc: './assets/icons/performance.svg',
+    internal: false,
   },
-  { name: 'Technologies', href: '', iconSrc: './assets/icons/tech.svg' },
-  { name: 'Sources', href: '', iconSrc: './assets/icons/sources.svg' },
+  {
+    name: 'Technologies',
+    href: '',
+    iconSrc: './assets/icons/tech.svg',
+    internal: false,
+  },
+  {
+    name: 'Sources',
+    href: '',
+    iconSrc: './assets/icons/sources.svg',
+    internal: false,
+  },
 ];
 
-export {
-  leftNavButtons,
-  rightNavButtons,
-  landingBottomNavButtons,
-  landingRightNavButtons,
-};
+export { landingBottomNavButtons, landingRightNavButtons };

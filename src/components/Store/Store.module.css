@@ -2,7 +2,7 @@
   min-height: 100vh;
   padding: 20px 40px;
   background-color: black;
-  color: var(--font-color)
+  color: var(--font-color);
 }
 
 .content {
@@ -12,10 +12,25 @@
 }
 
 .mid-content {
-  margin-left: 80px
+  margin-left: 80px;
 }
 
 .store h2 {
   font-size: 3.2rem;
   font-weight: 1000;
+}
+
+.blur {
+  filter: blur(4px);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: all;
+  z-index: 2;
+  background-color: transparent;
 }
