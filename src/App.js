@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Store from './components/Store/Store';
 import Cart from './components/Cart/Cart';
+import GameDetails from './components/GameDetails/GameDetails';
 import './index.css';
 
 const App = () => {
@@ -83,6 +84,7 @@ const App = () => {
               />
             }
           />
+          <Route path='store/games/:gameName' element={<GameDetails />} />
         </Routes>
       </BrowserRouter>
     </div>

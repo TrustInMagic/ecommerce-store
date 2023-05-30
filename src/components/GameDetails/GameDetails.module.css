@@ -1,0 +1,56 @@
+.game-details {
+  padding: 20px 40px;
+  background-color: black;
+  color: var(--font-color);
+  min-height: 100vh;
+}
+
+.back {
+  text-decoration: none;
+  color: inherit;
+}
+
+.img-slider {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  border: solid red;
+}
+
+.img-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+}
+
+.game-details .img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 40vh;
+  position: absolute;
+  border-radius: 20px;
+  transition: all 0.5s ease-in-out;
+}
+
+.img-0 {
+  z-index: 1;
+}
+
+.arrow-nav {
+  display: flex;
+  width: 100%;
+  z-index: 2;
+  border: solid pink;
+  justify-content: space-between;
+  position: absolute;
+}
+
+.arrow-nav > * {
+  height: 50px;
+  width: 50px;
+  opacity: 50%;
+  cursor: pointer;
+  align-self: center;
+}
