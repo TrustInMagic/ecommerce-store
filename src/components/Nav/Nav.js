@@ -3,7 +3,7 @@ import styles from './Nav.module.css';
 import CartSvg from '../../helper-components/CartSvg';
 import { Link } from 'react-router-dom';
 
-const New = ({
+const Nav = ({
   isForLanding,
   handleSearch,
   handleQuery,
@@ -58,4 +58,4 @@ const New = ({
   );
 };
 
-export default New
+export default Nav
