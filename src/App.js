@@ -84,7 +84,17 @@ const App = () => {
               />
             }
           />
-          <Route path='store/games/:gameName' element={<GameDetails />} />
+          <Route
+            path='store/games/:gameName'
+            element={
+              <GameDetails
+                openCart={openCart}
+                addToCart={addToCart}
+                cartContent={cartContent}
+
+              />
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

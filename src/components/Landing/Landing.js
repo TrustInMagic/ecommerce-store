@@ -23,7 +23,7 @@ const Landing = ({ openCart, isCartVisible, cartContent, closeCart }) => {
         <Nav
           openCart={openCart}
           cartContent={cartContent}
-          isForLanding={true}
+          target='landing'
         />
         <div className={styles.content}>
           <div className={styles['main-banner']}>

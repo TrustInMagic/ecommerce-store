@@ -8,8 +8,8 @@ const games = [
       released: '10th of December, 2020',
       platforms: 'Playstation 4, PC, Xbox Series S/X, Playstation 5, Xbox One',
       mainGenre: 'RPG',
-      Developers: 'CD PROJECT RED, CD PROJECT',
-      Publishers: 'CD PROJECT RED',
+      developers: 'CD PROJECT RED, CD PROJECT',
+      publishers: 'CD PROJECT RED',
     },
     websiteUrl: 'https://www.cyberpunk.net/ro/en/',
     imgUrl: [
@@ -29,8 +29,8 @@ const games = [
       released: '9th of November, 2018',
       platforms: 'Playstation 4, PC, Xbox Series S/X, Xbox One',
       mainGenre: 'Shooter',
-      Developers: 'EA Digital Illusions CE',
-      Publishers: 'Electronic Arts',
+      developers: 'EA Digital Illusions CE',
+      publishers: 'Electronic Arts',
     },
     websiteUrl: 'https://www.ea.com/games/battlefield/battlefield-5',
     imgUrl: [

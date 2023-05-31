@@ -122,7 +122,7 @@ const Store = ({
           query={query}
           openCart={openCart}
           cartContent={cartContent}
-          isForLanding={false}
+          target='store'
         />
         <div className={styles.content}>
           <StoreNav filterBy={filterBy} currentFilter={filter} />

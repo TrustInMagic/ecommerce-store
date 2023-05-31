@@ -22,7 +22,7 @@ const Cart = ({ isCartVisible, closeCart, content, removeFromCart }) => {
             : `${content.length} games`}
         </div>
         <div
-          className={styles.x}
+          className={styles['close-button']}
           onClick={closeCart}
           data-testid='close-cart-test'
         >
