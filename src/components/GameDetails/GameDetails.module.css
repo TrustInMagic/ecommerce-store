@@ -1,3 +1,7 @@
+.blur {
+  filter: blur(4px);
+}
+
 /* header */
 
 .game-details {
@@ -50,6 +54,20 @@
 
 .img-0 {
   z-index: 1;
+}
+
+.arrow-nav {
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: calc(50% - 30px);
+}
+
+.previous,
+.next {
+  cursor: pointer;
 }
 
 /* right part */
@@ -144,5 +162,5 @@
 }
 
 .add:hover {
-  color: var(--violet)
+  color: var(--violet);
 }

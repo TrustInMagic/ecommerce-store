@@ -111,6 +111,8 @@ const App = () => {
                 cartContent={cartContent}
                 wishList={wishList}
                 handleWishList={handleWishList}
+                isCartVisible={isCartVisible}
+                closeCart={closeCart}
               />
             }
           />

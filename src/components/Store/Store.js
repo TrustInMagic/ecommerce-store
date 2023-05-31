@@ -99,8 +99,10 @@ const Store = ({
 
   return (
     <>
+      {/* adding this overlay element to disable functionality of main section 
+      when cart is visible; features close cart on click */}
       {isCartVisible ? (
-        <div className={styles.overlay} onClick={closeCart}></div>
+        <div className='overlay' onClick={closeCart}></div>
       ) : null}
       <div className={`${styles.store} ${isCartVisible ? styles.blur : ''}`}>
         <Nav
