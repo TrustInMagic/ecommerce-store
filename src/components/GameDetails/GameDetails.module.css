@@ -48,14 +48,20 @@
   border-radius: 20px;
 }
 
+.img-0 {
+  z-index: 1;
+}
+
 /* right part */
 
 .details {
-  color: var(--slate-font)
+  color: var(--slate-font);
+  display: flex;
+  flex-direction: column;
 }
 
 .content h3 {
-  color: var(--font-color)
+  color: var(--font-color);
 }
 
 .about {
@@ -66,6 +72,7 @@
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   position: relative;
+  line-height: 1.5;
 }
 
 .description {
@@ -79,16 +86,63 @@
   background-color: transparent;
 }
 
-.show-more {
-  cursor: pointer;
-  display: flex;
-  justify-content: flex-end;
+.more {
   background-color: var(--zinc);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 15px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.8;
 }
 
-.more {
+.show-more {
+  display: block;
+}
+
+.hide-more {
   display: none;
+}
+
+.handle-more {
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.website {
+  text-decoration: none;
+  color: var(--font-color);
+  font-weight: 900;
+}
+
+/* purchase */
+
+.purchase-details {
+  background-color: var(--light-black);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: auto;
+  gap: 5px;
+}
+
+.purchase-details svg {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.buy {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.added {
+  color: var(--check-mark-green);
+}
+
+.add:hover {
+  color: var(--violet)
 }

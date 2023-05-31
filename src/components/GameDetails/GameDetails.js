@@ -15,6 +15,8 @@ const GameDetails = ({
   handleWishList,
 }) => {
   const { gameName } = useParams();
+  const [detailsVisible, setDetailsVisible] = React.useState(false);
+
   let displayedGame = null;
 
   for (let game of games) {
@@ -66,26 +68,54 @@ const GameDetails = ({
             <h3>About</h3>
             <div className={styles.description}>{displayedGame.about}</div>
           </div>
-          <div className={styles['show-more']}>More ▼</div>
           <div className={styles.more}>
-            <a className={styles.website} href={`${displayedGame.websiteUrl}`}>
-              {displayedGame.name} Website
-            </a>
-            <div className={styles['extra-info']}>
-              Released: {displayedGame.more.released}
+            {detailsVisible ? (
+              <div />
+            ) : (
+              <div
+                onClick={() => {
+                  setDetailsVisible(true);
+                }}
+                className={styles['handle-more']}
+              >
+                More ▼
+              </div>
+            )}
+            <div
+              className={
+                detailsVisible ? styles['show-more'] : styles['hide-more']
+              }
+            >
+              <a
+                className={styles.website}
+                href={`${displayedGame.websiteUrl}`}
+              >
+                {displayedGame.name} Website
+              </a>
+              <div className={styles['extra-info']}>
+                Released: {displayedGame.more.released}
+              </div>
+              <div className={styles['extra-info']}>
+                Platforms: {displayedGame.more.platforms}
+              </div>
+              <div className={styles['extra-info']}>
+                Main Genre: {displayedGame.more.mainGenre}
+              </div>
+              <div className={styles['extra-info']}>
+                Developers: {displayedGame.more.developers}
+              </div>
+              <div className={styles['extra-info']}>
+                Publishers: {displayedGame.more.publishers}
+              </div>
             </div>
-            <div className={styles['extra-info']}>
-              Platforms: {displayedGame.more.platforms}
-            </div>
-            <div className={styles['extra-info']}>
-              Main Genre: {displayedGame.more.mainGenre}
-            </div>
-            <div className={styles['extra-info']}>
-              Developers: {displayedGame.more.developers}
-            </div>
-            <div className={styles['extra-info']}>
-              Publishers: {displayedGame.more.publishers}
-            </div>
+            {detailsVisible ? (
+              <div
+                className={styles['handle-more']}
+                onClick={() => setDetailsVisible(false)}
+              >
+                Hide ▲
+              </div>
+            ) : null}
           </div>
 
           <div className={styles['purchase-details']}>
@@ -124,8 +154,6 @@ const GameDetails = ({
                   Add to cart ➕
                 </div>
               )}
-
-              <div className={styles.price}>${displayedGame.price}</div>
             </div>
           </div>
         </div>
