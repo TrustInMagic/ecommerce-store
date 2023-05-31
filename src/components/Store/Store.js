@@ -13,27 +13,14 @@ const Store = ({
   addToCart,
   cartContent,
   closeCart,
+  wishList,
+  handleWishList,
 }) => {
   const [displayedGames, setDisplayedGames] = React.useState(games);
   const [filter, setFilter] = React.useState('none');
   const [error, setError] = React.useState(null);
   const [display, setDisplay] = React.useState('grid');
   const [query, setQuery] = React.useState('');
-  const [wishList, setWishList] = React.useState([]);
-
-  const handleWishList = (clickedGame) => {
-    setWishList((prevWishList) => {
-      if (
-        prevWishList.some(
-          (iteratedGame) => iteratedGame.name === clickedGame.name
-        )
-      ) {
-        return prevWishList.filter((game) => game.name !== clickedGame.name);
-      } else {
-        return [clickedGame, ...prevWishList];
-      }
-    });
-  };
 
   const filterBy = (filter) => {
     switch (filter) {
@@ -53,7 +40,7 @@ const Store = ({
 
   const filterByWishlist = () => {
     setDisplayedGames(wishList);
-    setFilter('Wishlist')
+    setFilter('Wishlist');
   };
 
   const sortByRatings = () => {

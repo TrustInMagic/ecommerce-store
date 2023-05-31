@@ -7,6 +7,22 @@ import GameDetails from './components/GameDetails/GameDetails';
 import './index.css';
 
 const App = () => {
+  const [wishList, setWishList] = React.useState([]);
+
+  const handleWishList = (clickedGame) => {
+    setWishList((prevWishList) => {
+      if (
+        prevWishList.some(
+          (iteratedGame) => iteratedGame.name === clickedGame.name
+        )
+      ) {
+        return prevWishList.filter((game) => game.name !== clickedGame.name);
+      } else {
+        return [clickedGame, ...prevWishList];
+      }
+    });
+  };
+
   const useCart = () => {
     const [isCartVisible, setCartVisible] = React.useState(false);
     const [cartContent, setCartContent] = React.useState([]);
@@ -81,6 +97,8 @@ const App = () => {
                 cartContent={cartContent}
                 isCartVisible={isCartVisible}
                 closeCart={closeCart}
+                wishList={wishList}
+                handleWishList={handleWishList}
               />
             }
           />
@@ -91,7 +109,8 @@ const App = () => {
                 openCart={openCart}
                 addToCart={addToCart}
                 cartContent={cartContent}
-
+                wishList={wishList}
+                handleWishList={handleWishList}
               />
             }
           />
