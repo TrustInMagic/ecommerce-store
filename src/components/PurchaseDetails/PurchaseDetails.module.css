@@ -1,0 +1,28 @@
+.purchase-details {
+  background-color: var(--light-black);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: auto;
+  gap: 5px;
+}
+
+.purchase-details svg {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.buy {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.added {
+  color: var(--check-mark-green);
+}
+
+.add:hover {
+  color: var(--violet);
+}

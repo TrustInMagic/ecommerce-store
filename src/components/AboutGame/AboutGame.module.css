@@ -1,0 +1,57 @@
+
+
+.content h3 {
+  color: var(--font-color);
+}
+
+.about {
+  overflow: scroll;
+  max-height: 300px;
+  background-color: var(--light-black);
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.about::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+
+.more {
+  background-color: var(--zinc);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 15px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.8;
+}
+
+.show-more {
+  display: block;
+}
+
+.hide-more {
+  display: none;
+}
+
+.handle-more {
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.website {
+  text-decoration: none;
+  color: var(--font-color);
+  font-weight: 900;
+}
