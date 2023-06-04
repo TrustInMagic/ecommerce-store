@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Nav.module.css';
 import CartSvg from '../../helper-components/CartSvg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Nav = ({
   target,
@@ -10,7 +10,10 @@ const Nav = ({
   query,
   openCart,
   cartContent,
+  transition,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.nav}>
       <div className={styles.left}>
@@ -24,7 +27,15 @@ const Nav = ({
           <div className={styles['button-name']}>Home</div>
         </Link>
         {target === 'landing' ? (
-          <Link to='/store' className={styles.button}>
+          <Link
+            className={styles.button}
+            onClick={() => {
+              transition();
+              setTimeout(() => {
+                navigate('/store');
+              }, 2000);
+            }}
+          >
             <img src='./assets/icons/browse-store.svg' alt='' />
             <div className={styles['button-name']}>Store</div>
           </Link>

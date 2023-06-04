@@ -7,7 +7,7 @@ import {
   landingBottomNavButtons,
 } from './landing.config';
 
-const Landing = ({ openCart, isCartVisible, cartContent, closeCart }) => {
+const Landing = ({ openCart, isCartVisible, cartContent, closeCart, transition }) => {
   return (
     <>
       {/* adding this overlay element to disable functionality of main section 
@@ -26,6 +26,7 @@ const Landing = ({ openCart, isCartVisible, cartContent, closeCart }) => {
           openCart={openCart}
           cartContent={cartContent}
           target='landing'
+          transition={transition}
         />
         <div className={styles.content}>
           <div className={styles['main-banner']}>

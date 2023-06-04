@@ -8,6 +8,7 @@ import './index.css';
 
 const App = () => {
   const [wishList, setWishList] = React.useState([]);
+  const [showBlackScreen, setShowBlackScreen] = React.useState(false);
 
   const handleWishList = (clickedGame) => {
     setWishList((prevWishList) => {
@@ -21,6 +22,11 @@ const App = () => {
         return [clickedGame, ...prevWishList];
       }
     });
+  };
+
+  const enableTransition = () => {
+    setShowBlackScreen(true);
+    setTimeout(() => setShowBlackScreen(false), 2000);
   };
 
   const useCart = () => {
@@ -75,6 +81,7 @@ const App = () => {
         content={cartContent}
         removeFromCart={removeFromCart}
       />
+      <div className={`black-screen ${showBlackScreen ? 'active' : ''}`} />
       <BrowserRouter>
         <Routes>
           <Route
@@ -85,6 +92,7 @@ const App = () => {
                 cartContent={cartContent}
                 isCartVisible={isCartVisible}
                 closeCart={closeCart}
+                transition={enableTransition}
               />
             }
           />
