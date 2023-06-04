@@ -14,8 +14,13 @@ const Nav = ({
   return (
     <div className={styles.nav}>
       <div className={styles.left}>
-        <Link to='/' className={styles.button}>
-          <img src={`${target === 'game-details' ? '../' : ''}../assets/icons/game-store.svg`} alt='' />
+        <Link to='/' className={`${styles.button} ${styles['home-button']}`}>
+          <img
+            src={`${
+              target === 'game-details' ? '../' : ''
+            }../assets/icons/game-store.svg`}
+            alt=''
+          />
           <div className={styles['button-name']}>Home</div>
         </Link>
         {target === 'landing' ? (
@@ -43,8 +48,16 @@ const Nav = ({
         ) : null}
       </div>
       <div className={styles.right}>
-        <a className={styles.button} href='https://github.com/TrustInMagic'>
-          <img src={`${target === 'game-details' ? '../' : ''}../assets/icons/github.svg`} alt='' />
+        <a
+          className={`${styles.button} ${styles['github-button']}`}
+          href='https://github.com/TrustInMagic'
+        >
+          <img
+            src={`${
+              target === 'game-details' ? '../' : ''
+            }../assets/icons/github.svg`}
+            alt=''
+          />
           <div className={styles['button-name']}>trustinmagic</div>
         </a>
         <div className={styles.button} onClick={openCart}>

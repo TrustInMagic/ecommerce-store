@@ -37,7 +37,7 @@
 
 .button-name {
   font-weight: 900;
-  color: var(--font-color)
+  color: var(--font-color);
 }
 
 .search {
@@ -57,7 +57,7 @@
   font-family: inherit;
   font-size: 1rem;
   padding: 0px 15px;
-  color: var(--font-color)
+  color: var(--font-color);
 }
 
 .search img {
@@ -71,4 +71,11 @@
 
 .button {
   cursor: pointer;
+}
+
+@media screen and (max-width: 680px) {
+  .home-button,
+  .github-button {
+    display: none;
+  }
 }
