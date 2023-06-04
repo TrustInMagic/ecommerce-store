@@ -6,6 +6,7 @@ import FilterNav from '../FilterNav/FilterNav';
 import games from '../../data-structures/games';
 import GameList from '../GameList/GameList';
 import styles from './Store.module.css';
+import { useTransition, animated } from '@react-spring/web';
 
 const Store = ({
   openCart,
@@ -21,6 +22,13 @@ const Store = ({
   const [error, setError] = React.useState(null);
   const [display, setDisplay] = React.useState('grid');
   const [query, setQuery] = React.useState('');
+  const [showStore, setShowStore] = React.useState(true);
+
+  const transition = useTransition(showStore, {
+    from: { x: -300, y: 0, opacity: 0.5 },
+    enter: { x: 0, y: 0, opacity: 1 },
+    leave: { x: 500, y: 0, opacity: 0.5 },
+  });
 
   const filterBy = (filter) => {
     switch (filter) {
@@ -104,38 +112,50 @@ const Store = ({
       {isCartVisible ? (
         <div className='overlay' onClick={closeCart}></div>
       ) : null}
-      <div className={`${styles.store} ${isCartVisible ? styles.blur : ''}`}>
-        <Nav
-          handleSearch={handleSearch}
-          handleQuery={handleQuery}
-          query={query}
-          openCart={openCart}
-          cartContent={cartContent}
-          target='store'
-        />
-        <div className={styles.content}>
-          <StoreNav filterBy={filterBy} currentFilter={filter} />
-          <div className={styles['mid-content']}>
-            <h2 className={styles.title}>Trending and interesting</h2>
-            <span>Based on player counts and ratings</span>
-            <FilterNav
-              filter={filter}
-              clearFilter={clearFilter}
-              changeDisplay={changeDisplay}
-              display={display}
-            />
-            <GameList
-              games={displayedGames}
-              wishList={wishList}
-              handleWishList={handleWishList}
-              error={error}
-              display={display}
-              addToCart={addToCart}
-              cartContent={cartContent}
-            />
-          </div>
-        </div>
-        <Footer />
+      <div className={styles['store-container']}>
+        {transition((style, item) =>
+          item ? (
+            <animated.div
+              className={`${isCartVisible ? styles.blur : ''}`}
+              style={style}
+            >
+              <Nav
+                handleSearch={handleSearch}
+                handleQuery={handleQuery}
+                query={query}
+                openCart={openCart}
+                cartContent={cartContent}
+                target='store'
+                setShowStore={setShowStore}
+              />
+              <div className={styles.content}>
+                <StoreNav filterBy={filterBy} currentFilter={filter} />
+                <div className={styles['mid-content']}>
+                  <h2 className={styles.title}>Trending and interesting</h2>
+                  <span>Based on player counts and ratings</span>
+                  <FilterNav
+                    filter={filter}
+                    clearFilter={clearFilter}
+                    changeDisplay={changeDisplay}
+                    display={display}
+                  />
+                  <GameList
+                    games={displayedGames}
+                    wishList={wishList}
+                    handleWishList={handleWishList}
+                    error={error}
+                    display={display}
+                    addToCart={addToCart}
+                    cartContent={cartContent}
+                  />
+                </div>
+              </div>
+              <Footer />
+            </animated.div>
+          ) : (
+            ''
+          )
+        )}
       </div>
     </>
   );

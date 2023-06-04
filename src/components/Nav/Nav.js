@@ -11,13 +11,26 @@ const Nav = ({
   openCart,
   cartContent,
   transition,
+  setShowStore,
 }) => {
   const navigate = useNavigate();
+
+  const delayedNavigation = (location, delay) => {
+    setTimeout(() => {
+      navigate(location);
+    }, delay);
+  };
 
   return (
     <div className={styles.nav}>
       <div className={styles.left}>
-        <Link to='/' className={`${styles.button} ${styles['home-button']}`}>
+        <Link
+          onClick={() => {
+            setShowStore(false)
+            delayedNavigation('/', 200);
+          }}
+          className={`${styles.button} ${styles['home-button']}`}
+        >
           <img
             src={`${
               target === 'game-details' ? '../' : ''
@@ -31,9 +44,7 @@ const Nav = ({
             className={styles.button}
             onClick={() => {
               transition();
-              setTimeout(() => {
-                navigate('/store');
-              }, 2000);
+              delayedNavigation('/store', 2000);
             }}
           >
             <img src='./assets/icons/browse-store.svg' alt='' />

@@ -1,8 +1,23 @@
-.store {
+.store-container {
   min-height: 100vh;
   padding: 20px 40px;
   background-color: black;
   color: var(--font-color);
+}
+
+.store-page {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.3s, transform 0.3s ease-in-out;
+}
+
+.store-page-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.store-page-hide {
+  transform: translateX(100%);
 }
 
 .content {
@@ -23,6 +38,3 @@
 .blur {
   filter: blur(4px);
 }
-
-
-
