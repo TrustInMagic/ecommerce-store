@@ -1,0 +1,49 @@
+.blur {
+  filter: blur(4px);
+}
+
+/* header */
+
+.game-details {
+  padding: 20px 40px;
+  background-color: black;
+  color: var(--font-color);
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  align-items: center;
+}
+
+.back {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.game-details h1 {
+  font-size: 3rem;
+}
+
+/*  content */
+
+.content {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 2fr 0.8fr;
+  gap: 30px;
+  height: 70%;
+}
+
+.right-section {
+  color: var(--slate-font);
+  display: flex;
+  flex-direction: column;
+}
+
+/* purchase */
+

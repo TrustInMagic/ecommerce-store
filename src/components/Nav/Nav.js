@@ -1,29 +1,45 @@
 import React from 'react';
 import styles from './Nav.module.css';
 import CartSvg from '../../helper-components/CartSvg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Nav = ({
-  isForLanding,
+  target,
   handleSearch,
   handleQuery,
   query,
   openCart,
   cartContent,
+  transition,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.nav}>
       <div className={styles.left}>
-        <Link to='/' className={styles.button}>
-          <img src='./assets/icons/game-store.svg' alt='' />
-          <div className={styles['button-name']}>Game Store</div>
+        <Link to='/' className={`${styles.button} ${styles['home-button']}`}>
+          <img
+            src={`${
+              target === 'game-details' ? '../' : ''
+            }../assets/icons/game-store.svg`}
+            alt=''
+          />
+          <div className={styles['button-name']}>Home</div>
         </Link>
-        {isForLanding ? (
-          <Link to='/store' className={styles.button}>
+        {target === 'landing' ? (
+          <Link
+            className={styles.button}
+            onClick={() => {
+              transition();
+              setTimeout(() => {
+                navigate('/store');
+              }, 2000);
+            }}
+          >
             <img src='./assets/icons/browse-store.svg' alt='' />
-            <div className={styles['button-name']}>Browse Store</div>
+            <div className={styles['button-name']}>Store</div>
           </Link>
-        ) : (
+        ) : target === 'store' ? (
           <div className={styles.search}>
             <input
               value={query}
@@ -40,11 +56,19 @@ const Nav = ({
               onClick={handleSearch}
             />
           </div>
-        )}
+        ) : null}
       </div>
       <div className={styles.right}>
-        <a className={styles.button} href='https://github.com/TrustInMagic'>
-          <img src='./assets/icons/github.svg' alt='' />
+        <a
+          className={`${styles.button} ${styles['github-button']}`}
+          href='https://github.com/TrustInMagic'
+        >
+          <img
+            src={`${
+              target === 'game-details' ? '../' : ''
+            }../assets/icons/github.svg`}
+            alt=''
+          />
           <div className={styles['button-name']}>trustinmagic</div>
         </a>
         <div className={styles.button} onClick={openCart}>
@@ -58,4 +82,4 @@ const Nav = ({
   );
 };
 
-export default Nav
+export default Nav;

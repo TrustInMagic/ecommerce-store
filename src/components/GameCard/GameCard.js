@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './GameCard.module.css';
 import CustomSvg from '../../helper-components/CustomSvg';
+import { Link } from 'react-router-dom';
 
 const GameCard = ({
   game,
@@ -10,7 +11,11 @@ const GameCard = ({
   cartContent,
 }) => {
   return (
-    <div className={styles.card} key={game.name}>
+    <Link
+      className={styles.card}
+      key={game.name}
+      to={`/store/games/${game.name}`}
+    >
       <img src={game.imgUrl[0]} alt='' />
       <div className={styles.content}>
         <div className={styles.buy}>
@@ -19,7 +24,13 @@ const GameCard = ({
           ) ? (
             <div className={styles.added}>Added ✓</div>
           ) : (
-            <div className={styles.add} onClick={() => addToCart(game)}>
+            <div
+              className={styles.add}
+              onClick={(e) => {
+                e.preventDefault();
+                addToCart(game);
+              }}
+            >
               Add to cart ➕
             </div>
           )}
@@ -29,7 +40,10 @@ const GameCard = ({
         <h3>{game.name}</h3>
         <div
           className={styles['svg-container']}
-          onClick={() => handleWishList(game)}
+          onClick={(e) => {
+            e.preventDefault();
+            handleWishList(game);
+          }}
         >
           <CustomSvg
             fill={isLiked ? 'red' : 'white'}
@@ -37,7 +51,7 @@ const GameCard = ({
           />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

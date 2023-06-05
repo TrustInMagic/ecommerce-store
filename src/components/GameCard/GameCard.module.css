@@ -3,6 +3,8 @@
   border-radius: 15px;
   max-width: 400px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card:hover {

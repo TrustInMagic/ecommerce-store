@@ -3,9 +3,32 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Store from './components/Store/Store';
 import Cart from './components/Cart/Cart';
+import GameDetails from './components/GameDetails/GameDetails';
 import './index.css';
 
 const App = () => {
+  const [wishList, setWishList] = React.useState([]);
+  const [showBlackScreen, setShowBlackScreen] = React.useState(false);
+
+  const handleWishList = (clickedGame) => {
+    setWishList((prevWishList) => {
+      if (
+        prevWishList.some(
+          (iteratedGame) => iteratedGame.name === clickedGame.name
+        )
+      ) {
+        return prevWishList.filter((game) => game.name !== clickedGame.name);
+      } else {
+        return [clickedGame, ...prevWishList];
+      }
+    });
+  };
+
+  const enableTransition = () => {
+    setShowBlackScreen(true);
+    setTimeout(() => setShowBlackScreen(false), 2000);
+  };
+
   const useCart = () => {
     const [isCartVisible, setCartVisible] = React.useState(false);
     const [cartContent, setCartContent] = React.useState([]);
@@ -58,6 +81,7 @@ const App = () => {
         content={cartContent}
         removeFromCart={removeFromCart}
       />
+      <div className={`black-screen ${showBlackScreen ? 'active' : ''}`} />
       <BrowserRouter>
         <Routes>
           <Route
@@ -68,6 +92,7 @@ const App = () => {
                 cartContent={cartContent}
                 isCartVisible={isCartVisible}
                 closeCart={closeCart}
+                transition={enableTransition}
               />
             }
           />
@@ -78,6 +103,22 @@ const App = () => {
                 openCart={openCart}
                 addToCart={addToCart}
                 cartContent={cartContent}
+                isCartVisible={isCartVisible}
+                closeCart={closeCart}
+                wishList={wishList}
+                handleWishList={handleWishList}
+              />
+            }
+          />
+          <Route
+            path='store/games/:gameName'
+            element={
+              <GameDetails
+                openCart={openCart}
+                addToCart={addToCart}
+                cartContent={cartContent}
+                wishList={wishList}
+                handleWishList={handleWishList}
                 isCartVisible={isCartVisible}
                 closeCart={closeCart}
               />

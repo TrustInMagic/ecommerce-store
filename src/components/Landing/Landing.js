@@ -7,11 +7,13 @@ import {
   landingBottomNavButtons,
 } from './landing.config';
 
-const Landing = ({ openCart, isCartVisible, cartContent, closeCart }) => {
+const Landing = ({ openCart, isCartVisible, cartContent, closeCart, transition }) => {
   return (
     <>
+      {/* adding this overlay element to disable functionality of main section 
+      when cart is visible; features close cart on click */}
       {isCartVisible ? (
-        <div className={styles.overlay} onClick={closeCart}></div>
+        <div className='overlay' onClick={closeCart}></div>
       ) : null}
       <div className={`${styles.landing} ${isCartVisible ? styles.blur : ''}`}>
         <video autoPlay muted loop playsInline className={styles.video}>
@@ -23,7 +25,8 @@ const Landing = ({ openCart, isCartVisible, cartContent, closeCart }) => {
         <Nav
           openCart={openCart}
           cartContent={cartContent}
-          isForLanding={true}
+          target='landing'
+          transition={transition}
         />
         <div className={styles.content}>
           <div className={styles['main-banner']}>

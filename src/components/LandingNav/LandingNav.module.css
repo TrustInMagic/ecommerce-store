@@ -73,3 +73,38 @@ img {
   align-self: center;
   font-size: 1.7rem;
 }
+
+@media screen and (max-width: 1000px) {
+  .right-nav {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    justify-self: center;
+  }  
+
+  .bottom-nav {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .bottom-nav {
+    width: 300px;
+    
+  }
+
+  .bottom-nav .button-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .right-nav .button-container,
+  .bottom-nav .button-container {
+    gap: 3px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+}

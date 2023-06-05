@@ -22,7 +22,7 @@ const Cart = ({ isCartVisible, closeCart, content, removeFromCart }) => {
             : `${content.length} games`}
         </div>
         <div
-          className={styles.x}
+          className={styles['close-button']}
           onClick={closeCart}
           data-testid='close-cart-test'
         >
@@ -39,7 +39,7 @@ const Cart = ({ isCartVisible, closeCart, content, removeFromCart }) => {
               ${game.price}
             </div>
             <div
-              className={styles.x}
+              className={styles['close-button']}
               data-testid={`remove-item-${idx}`}
               onClick={() => removeFromCart(game)}
             >

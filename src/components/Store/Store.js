@@ -13,27 +13,14 @@ const Store = ({
   addToCart,
   cartContent,
   closeCart,
+  wishList,
+  handleWishList,
 }) => {
   const [displayedGames, setDisplayedGames] = React.useState(games);
   const [filter, setFilter] = React.useState('none');
   const [error, setError] = React.useState(null);
   const [display, setDisplay] = React.useState('grid');
   const [query, setQuery] = React.useState('');
-  const [wishList, setWishList] = React.useState([]);
-
-  const handleWishList = (clickedGame) => {
-    setWishList((prevWishList) => {
-      if (
-        prevWishList.some(
-          (iteratedGame) => iteratedGame.name === clickedGame.name
-        )
-      ) {
-        return prevWishList.filter((game) => game.name !== clickedGame.name);
-      } else {
-        return [clickedGame, ...prevWishList];
-      }
-    });
-  };
 
   const filterBy = (filter) => {
     switch (filter) {
@@ -53,7 +40,7 @@ const Store = ({
 
   const filterByWishlist = () => {
     setDisplayedGames(wishList);
-    setFilter('Wishlist')
+    setFilter('Wishlist');
   };
 
   const sortByRatings = () => {
@@ -112,8 +99,10 @@ const Store = ({
 
   return (
     <>
+      {/* adding this overlay element to disable functionality of main section 
+      when cart is visible; features close cart on click */}
       {isCartVisible ? (
-        <div className={styles.overlay} onClick={closeCart}></div>
+        <div className='overlay' onClick={closeCart}></div>
       ) : null}
       <div className={`${styles.store} ${isCartVisible ? styles.blur : ''}`}>
         <Nav
@@ -122,7 +111,7 @@ const Store = ({
           query={query}
           openCart={openCart}
           cartContent={cartContent}
-          isForLanding={false}
+          target='store'
         />
         <div className={styles.content}>
           <StoreNav filterBy={filterBy} currentFilter={filter} />
