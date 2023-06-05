@@ -8,6 +8,8 @@ import GameList from '../GameList/GameList';
 import styles from './Store.module.css';
 import { useTransition, animated } from '@react-spring/web';
 
+export const ShowStoreContext = React.createContext();
+
 const Store = ({
   openCart,
   isCartVisible,
@@ -145,15 +147,17 @@ const Store = ({
                     changeDisplay={changeDisplay}
                     display={display}
                   />
-                  <GameList
-                    games={displayedGames}
-                    wishList={wishList}
-                    handleWishList={handleWishList}
-                    error={error}
-                    display={display}
-                    addToCart={addToCart}
-                    cartContent={cartContent}
-                  />
+                  <ShowStoreContext.Provider value={setShowStore}>
+                    <GameList
+                      games={displayedGames}
+                      wishList={wishList}
+                      handleWishList={handleWishList}
+                      error={error}
+                      display={display}
+                      addToCart={addToCart}
+                      cartContent={cartContent}
+                    />
+                  </ShowStoreContext.Provider>
                 </div>
               </div>
               <Footer />

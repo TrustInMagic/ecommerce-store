@@ -12,12 +12,6 @@ const GameList = ({
   addToCart,
   cartContent,
 }) => {
-  const [toggleAnimation, setToggleAnimation] = React.useState(false);
-
-  const handleAnimation = () => {
-    setToggleAnimation(!toggleAnimation)
-  }
-
   return (
     <div
       className={
@@ -42,8 +36,6 @@ const GameList = ({
             isInCart={cartContent.some(
               (iteratedGame) => iteratedGame.name === game.name
             )}
-            handleAnimation={handleAnimation}
-            toggleAnimation={toggleAnimation}
           />
         ))
       ) : (
