@@ -8,8 +8,20 @@ const GameCard = ({
   handleWishList,
   isLiked,
   addToCart,
-  cartContent,
+  isInCart,
+  handleAnimation,
+  toggleAnimation,
 }) => {
+  const [animation, setAnimation] = React.useState(0);
+
+  React.useEffect(() => {
+    const renderAnimations = () => {
+      return toggleAnimation ? setAnimation(1) : setAnimation(0);
+    };
+
+    renderAnimations();
+  }, [toggleAnimation]);
+
   return (
     <Link
       className={styles.card}
@@ -19,9 +31,7 @@ const GameCard = ({
       <img src={game.imgUrl[0]} alt='' />
       <div className={styles.content}>
         <div className={styles.buy}>
-          {cartContent.some(
-            (iteratedGame) => iteratedGame.name === game.name
-          ) ? (
+          {isInCart ? (
             <div className={styles.added}>Added ✓</div>
           ) : (
             <div
@@ -42,8 +52,10 @@ const GameCard = ({
           className={styles['svg-container']}
           onClick={(e) => {
             e.preventDefault();
+            handleAnimation();
             handleWishList(game);
           }}
+          animation={animation}
         >
           <CustomSvg
             fill={isLiked ? 'red' : 'white'}
