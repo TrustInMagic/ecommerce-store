@@ -59,7 +59,9 @@ const GameDetails = ({
               addToCart={addToCart}
               wishList={wishList}
               handleWishList={handleWishList}
-              cartContent={cartContent}
+              isAddedToCart={cartContent.some(
+                (iteratedGame) => iteratedGame.name === displayedGame.name
+              )}
             />
           </div>
         </div>

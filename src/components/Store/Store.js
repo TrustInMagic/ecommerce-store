@@ -22,13 +22,17 @@ const Store = ({
   const [error, setError] = React.useState(null);
   const [display, setDisplay] = React.useState('grid');
   const [query, setQuery] = React.useState('');
-  const [showStore, setShowStore] = React.useState(true);
 
-  const transition = useTransition(showStore, {
-    from: { x: -300, y: 0, opacity: 0.5 },
-    enter: { x: 0, y: 0, opacity: 1 },
-    leave: { x: 500, y: 0, opacity: 0.5 },
-  });
+  const useStoreTransition = () => {
+    const [showStore, setShowStore] = React.useState(true);
+    const transition = useTransition(showStore, {
+      from: { x: -300, y: 0, opacity: 0.5 },
+      enter: { x: 0, y: 0, opacity: 1 },
+      leave: { x: 500, y: 0, opacity: 0.5 },
+    });
+
+    return { transition, setShowStore };
+  };
 
   const filterBy = (filter) => {
     switch (filter) {
@@ -104,6 +108,8 @@ const Store = ({
     if (message.length === 0) setDisplayedGames(games);
     setQuery(message);
   };
+
+  const { transition, setShowStore } = useStoreTransition();
 
   return (
     <>

@@ -8,7 +8,6 @@ import './index.css';
 
 const App = () => {
   const [wishList, setWishList] = React.useState([]);
-  const [showBlackScreen, setShowBlackScreen] = React.useState(false);
 
   const handleWishList = (clickedGame) => {
     setWishList((prevWishList) => {
@@ -24,9 +23,15 @@ const App = () => {
     });
   };
 
-  const enableTransition = () => {
-    setShowBlackScreen(true);
-    setTimeout(() => setShowBlackScreen(false), 2000);
+  const useBlackScreen = () => {
+    const [showBlackScreen, setShowBlackScreen] = React.useState(false);
+
+    const enableTransition = () => {
+      setShowBlackScreen(true);
+      setTimeout(() => setShowBlackScreen(false), 2000);
+    };
+
+    return { enableTransition, showBlackScreen };
   };
 
   const useCart = () => {
@@ -72,6 +77,8 @@ const App = () => {
     addToCart,
     removeFromCart,
   } = useCart();
+
+  const { enableTransition, showBlackScreen } = useBlackScreen();
 
   return (
     <div className='app'>

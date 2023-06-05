@@ -84,6 +84,5 @@ body::-webkit-scrollbar-track:hover {
 
 .black-screen.active {
   height: 100%;
-  pointer-events: auto;
   transition: height 2s;
 }

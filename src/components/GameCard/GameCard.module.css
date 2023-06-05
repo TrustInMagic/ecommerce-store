@@ -2,6 +2,7 @@
   background-color: var(--light-black);
   border-radius: 15px;
   max-width: 400px;
+  min-width: 300px;
   cursor: pointer;
   text-decoration: none;
   color: inherit;

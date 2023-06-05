@@ -26,7 +26,7 @@ const Nav = ({
       <div className={styles.left}>
         <Link
           onClick={() => {
-            setShowStore(false)
+            setShowStore && setShowStore(false) 
             delayedNavigation('/', 200);
           }}
           className={`${styles.button} ${styles['home-button']}`}
