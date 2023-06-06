@@ -26,8 +26,8 @@ const GameDetails = ({
       x: -300,
       y: 0,
     },
-    { x: 0, y: 0},
-    { x: 500, y: 0}
+    { x: 0, y: 0 },
+    { x: 500, y: 0 }
   );
 
   let displayedGame = null;
@@ -76,15 +76,17 @@ const GameDetails = ({
                 <ImgSlider game={displayedGame} />
                 <div className={styles['right-section']}>
                   <AboutGame game={displayedGame} />
-                  <PurchaseDetails
-                    game={displayedGame}
-                    addToCart={addToCart}
-                    wishList={wishList}
-                    handleWishList={handleWishList}
-                    isAddedToCart={cartContent.some(
-                      (iteratedGame) => iteratedGame.name === displayedGame.name
-                    )}
-                  />
+                  <div className={styles.purchase}>
+                    <PurchaseDetails
+                      game={displayedGame}
+                      addToCart={addToCart}
+                      wishList={wishList}
+                      handleWishList={handleWishList}
+                      isAddedToCart={cartContent.some(
+                        (iteratedGame) => iteratedGame.name === displayedGame.name
+                      )}
+                    />
+                  </div>
                 </div>
               </div>
             </animated.div>

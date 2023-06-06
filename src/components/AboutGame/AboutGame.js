@@ -21,7 +21,7 @@ const AboutGame = ({ game }) => {
   });
 
   return (
-    <>
+    <div className={styles['game-details']}>
       <div className={isOverflow ? styles['about-container'] : ''}>
         <div className={styles.about} ref={ref}>
           <h3>About</h3>
@@ -80,7 +80,7 @@ const AboutGame = ({ game }) => {
           )
         )}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,10 +1,14 @@
-.content h3 {
-  color: var(--font-color);
+.game-details {
+  margin-bottom: 15px;
+}
+
+.about h3 {
+  color: white;
 }
 
 .about {
   overflow: scroll;
-  max-height: 300px;
+  max-height: 200px;
   background-color: var(--light-black);
   padding: 20px;
   border-top-left-radius: 20px;
@@ -42,6 +46,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-out;
+  font-size: 0.7rem;
 }
 
 .extra-details {
@@ -49,11 +54,10 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 15px;
-  font-size: 0.9rem;
   display: flex;
   flex-direction: column;
   line-height: 1.8;
-  min-height: 50px;
+  min-height: 60px;
 }
 
 .more.show-more {
@@ -74,4 +78,17 @@
   text-decoration: none;
   color: var(--font-color);
   font-weight: 900;
+}
+
+@media screen and (max-width: 580px) {
+  .more {
+    font-size: 0.6rem;
+  }
+  .extra-details {
+    font-size: 0.8rem;
+  }
+
+  .about {
+    font-size: 0.9rem;
+  }
 }
