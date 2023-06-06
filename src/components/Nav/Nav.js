@@ -13,6 +13,7 @@ const Nav = ({
   cartContent,
   transition,
   setShowStore,
+  setShowGameDetails,
 }) => {
   const navigateWithDelay = useDelayedNavigation();
 
@@ -22,6 +23,7 @@ const Nav = ({
         <Link
           onClick={() => {
             setShowStore && setShowStore(false);
+            setShowGameDetails && setShowGameDetails(false);
             navigateWithDelay('/', 200);
           }}
           className={`${styles.button} ${styles['home-button']}`}
