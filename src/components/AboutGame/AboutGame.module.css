@@ -9,13 +9,27 @@
   padding: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  position: relative;
   line-height: 1.5;
 }
 
 .description {
   margin-top: 10px;
   font-size: 0.9rem;
+}
+
+.about-container {
+  position: relative;
+}
+
+.about-container:after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  height: 8%;
+  bottom: 0px;
+  backdrop-filter: blur(1px);
+  pointer-events: none;
 }
 
 .about::-webkit-scrollbar {
@@ -25,6 +39,12 @@
 }
 
 .more {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.extra-details {
   background-color: var(--zinc);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -33,19 +53,21 @@
   display: flex;
   flex-direction: column;
   line-height: 1.8;
+  min-height: 50px;
 }
 
-.show-more {
-  display: block;
-}
-
-.hide-more {
-  display: none;
+.more.show-more {
+  max-height: 400px;
+  transition: max-height 0.5s ease-in;
 }
 
 .handle-more {
   align-self: flex-end;
   cursor: pointer;
+}
+
+.more-button {
+  position: absolute;
 }
 
 .website {
