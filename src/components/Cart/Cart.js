@@ -8,49 +8,59 @@ const Cart = ({ isCartVisible, closeCart, content, removeFromCart }) => {
 
   return (
     <div
-      data-testid='cart-test'
-      className={`${styles.cart} ${
-        isCartVisible ? styles.visible : styles.invisible
+      className={`${styles['cart-container']} ${
+        !isCartVisible ? styles['no-pointer'] : ''
       }`}
     >
-      <div className={styles.header}>
-        <div className={styles['added-games']}>
-          {content.length === 0
-            ? 'No games yet'
-            : content.length === 1
-            ? `${content.length} game`
-            : `${content.length} games`}
-        </div>
-        <div
-          className={styles['close-button']}
-          onClick={closeCart}
-          data-testid='close-cart-test'
-        >
-          ✖
-        </div>
-      </div>
-      <div className={styles.content}>
-        {content.map((game, idx) => (
-          <div className={styles.game} key={game.name} data-testid='cart-item'>
-            <div className={styles.name} data-testid={`item-name-${idx}`}>
-              {game.name}
-            </div>
-            <div className={styles.price} data-testid={`item-price-${idx}`}>
-              ${game.price}
-            </div>
-            <div
-              className={styles['close-button']}
-              data-testid={`remove-item-${idx}`}
-              onClick={() => removeFromCart(game)}
-            >
-              ✕
-            </div>
+      <div
+        data-testid='cart-test'
+        className={`${styles.cart} ${
+          isCartVisible ? styles.visible : styles.invisible
+        }`}
+      >
+        <div className={styles.header}>
+          <div className={styles['added-games']}>
+            {content.length === 0
+              ? 'No games yet'
+              : content.length === 1
+              ? `${content.length} game`
+              : `${content.length} games`}
           </div>
-        ))}
-      </div>
-      <div className={styles.footer}>
-        <div className={styles.total}>Total: ${totalPrice}</div>
-        <div className={styles.checkout}>Checkout ➔</div>
+          <div
+            className={styles['close-button']}
+            onClick={closeCart}
+            data-testid='close-cart-test'
+          >
+            ✖
+          </div>
+        </div>
+        <div className={styles.content}>
+          {content.map((game, idx) => (
+            <div
+              className={styles.game}
+              key={game.name}
+              data-testid='cart-item'
+            >
+              <div className={styles.name} data-testid={`item-name-${idx}`}>
+                {game.name}
+              </div>
+              <div className={styles.price} data-testid={`item-price-${idx}`}>
+                ${game.price}
+              </div>
+              <div
+                className={styles['close-button']}
+                data-testid={`remove-item-${idx}`}
+                onClick={() => removeFromCart(game)}
+              >
+                ✕
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className={styles.footer}>
+          <div className={styles.total}>Total: ${totalPrice}</div>
+          <div className={styles.checkout}>Checkout ➔</div>
+        </div>
       </div>
     </div>
   );
