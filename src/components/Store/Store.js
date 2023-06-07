@@ -137,8 +137,10 @@ const Store = ({
               <div className={styles.content}>
                 <StoreNav filterBy={filterBy} currentFilter={filter} />
                 <div className={styles['mid-content']}>
-                  <h2 className={styles.title}>Trending and interesting</h2>
-                  <span>Based on player counts and ratings</span>
+                  <div className={styles.heading}>
+                    <h2 className={styles.title}>Trending and interesting</h2>
+                    <span>Based on player counts and ratings</span>
+                  </div>
                   <FilterNav
                     filter={filter}
                     clearFilter={clearFilter}

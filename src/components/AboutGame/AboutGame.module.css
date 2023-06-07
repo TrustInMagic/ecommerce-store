@@ -82,13 +82,17 @@
 
 @media screen and (max-width: 580px) {
   .more {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
   .extra-details {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .about {
     font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
   }
 }

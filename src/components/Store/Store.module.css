@@ -56,3 +56,23 @@
     font-size: 0.9rem;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .store-container h2 {
+    font-size: 2rem;
+  }
+
+  .content {
+    margin-top: 30px;
+  }
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .heading h2 {
+    text-align: center;
+  }
+}
