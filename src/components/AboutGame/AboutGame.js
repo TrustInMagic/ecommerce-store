@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './AboutGame.module.css';
-import useIsOverflow from '../../utils/useIsOverflow';
+import useIsOverflow from '../../utils/custom-hooks/useIsOverflow';
 import { useTransition, animated } from '@react-spring/web';
 
 const AboutGame = ({ game }) => {

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Store from './components/Store/Store';
 import Cart from './components/Cart/Cart';
+import NotFound from './components/NotFound/NotFound';
 import GameDetails from './components/GameDetails/GameDetails';
 import './index.css';
 
@@ -131,6 +132,7 @@ const App = () => {
               />
             }
           />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

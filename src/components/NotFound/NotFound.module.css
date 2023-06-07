@@ -1,0 +1,55 @@
+.error-page {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  background-color: var(--light-black);
+  max-height: 300px;
+  max-width: 900px;
+  border-radius: 20px;
+  margin-top: -200px;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.error img {
+  height: 300px;
+  width: auto;
+}
+
+.error .text {
+  color: var(--font-color);
+}
+
+.error h3 span {
+  color: #8b5cf6;
+}
+
+.error-text {
+  color: var(--slate-font);
+  margin-top: 10px;
+}
+
+.progress {
+  position: absolute;
+  height: 10px;
+  width: 0%;
+  background-color: #8b5cf6;
+  bottom: 2px;
+  left: 0;
+  transition: width 4s ease-in;
+}
+
+.progress-on {
+  width: 100%
+}

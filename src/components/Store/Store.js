@@ -7,7 +7,7 @@ import games from '../../data-structures/games';
 import GameList from '../GameList/GameList';
 import styles from './Store.module.css';
 import { animated } from '@react-spring/web';
-import useComponentTransition from '../../utils/useComponentTransition';
+import useComponentTransition from '../../utils/custom-hooks/useComponentTransition';
 
 export const ShowStoreContext = React.createContext();
 
