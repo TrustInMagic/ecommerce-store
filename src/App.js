@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Store from './components/Store/Store';
 import Cart from './components/Cart/Cart';
@@ -90,7 +90,7 @@ const App = () => {
         removeFromCart={removeFromCart}
       />
       <div className={`black-screen ${showBlackScreen ? 'active' : ''}`} />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route
             path='/'
@@ -134,7 +134,7 @@ const App = () => {
           />
           <Route path='*' element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 };
