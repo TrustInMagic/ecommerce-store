@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={styles.title}>
-        <img src='/assets/icons/game-store.svg' alt='' />
+        <img src='assets/icons/game-store.svg' alt='' />
         <div>Game Store</div>
       </div>
       <div className={styles['top-part']}>
@@ -45,12 +45,12 @@ const Footer = () => {
         <div className={styles['download-app']}>
           <img
             className={styles.apple}
-            src='/assets/buttons/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg'
+            src='assets/buttons/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg'
             alt=''
           />
           <img
             className={styles.google}
-            src='/assets/buttons/google-play-badge.png'
+            src='assets/buttons/google-play-badge.png'
             alt=''
           />
         </div>
@@ -64,8 +64,8 @@ const Footer = () => {
           <u>Guidelines</u>
         </div>
         <div className={styles.social}>
-          <img src='/assets/icons/twitter.svg' alt='' />
-          <img src='/assets/icons/instagram.svg' alt='' />
+          <img src='assets/icons/twitter.svg' alt='' />
+          <img src='assets/icons/instagram.svg' alt='' />
         </div>
       </div>
     </div>
