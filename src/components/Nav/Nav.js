@@ -28,7 +28,7 @@ const Nav = ({
           }}
           className={`${styles.button} ${styles['home-button']}`}
         >
-          <img src='/assets/icons/game-store.svg' alt='' />
+          <img src='assets/icons/game-store.svg' alt='' />
           <div className={styles['button-name']}>Home</div>
         </Link>
         {target === 'landing' ? (
@@ -39,7 +39,7 @@ const Nav = ({
               navigateWithDelay('/store', 2000);
             }}
           >
-            <img src='/assets/icons/browse-store.svg' alt='' />
+            <img src='./assets/icons/browse-store.svg' alt='' />
             <div className={styles['button-name']}>Store</div>
           </Link>
         ) : target === 'store' ? (
@@ -62,7 +62,7 @@ const Nav = ({
           className={`${styles.button} ${styles['github-button']}`}
           href='https://github.com/TrustInMagic'
         >
-          <img src='/assets/icons/github.svg' alt='' />
+          <img src='./assets/icons/github.svg' alt='' />
           <div className={styles['button-name']}>trustinmagic</div>
         </a>
         <div className={styles.button} onClick={openCart}>

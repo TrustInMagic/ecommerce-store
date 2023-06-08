@@ -2,25 +2,25 @@ const landingBottomNavButtons = [
   {
     name: 'Browse',
     href: '/store',
-    iconSrc: './assets/icons/browse.svg',
+    iconSrc: '/assets/icons/browse.svg',
     internal: true,
   },
   {
     name: 'Play Dice',
     href: 'store/games/:gameName',
-    iconSrc: './assets/icons/dice.svg',
+    iconSrc: '/assets/icons/dice.svg',
     internal: true,
   },
   {
     name: 'GitHub',
     href: 'https://github.com/TrustInMagic',
-    iconSrc: './assets/icons/github2.svg',
+    iconSrc: '/assets/icons/github2.svg',
     internal: false,
   },
   {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/tim-ionescu-650a78110/',
-    iconSrc: './assets/icons/linkedin.svg',
+    iconSrc: '/assets/icons/linkedin.svg',
     internal: false,
   },
 ];
