@@ -117,4 +117,8 @@
   .content {
     margin-top: 40px;
   }
+
+  .landing {
+    padding: 10px
+  }
 }
