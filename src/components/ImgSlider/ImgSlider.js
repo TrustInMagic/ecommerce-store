@@ -33,7 +33,7 @@ const ImgSlider = ({ game }) => {
           const opacity = idx === activeImgIdx ? 1 : 0;
           return (
             <img
-              src={`../.${url}`}
+              src={`${url}`}
               alt=''
               key={url}
               className={`${styles.img} ${styles[`img-${idx}`]}`}
