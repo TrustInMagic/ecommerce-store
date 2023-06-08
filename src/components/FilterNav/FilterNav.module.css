@@ -44,3 +44,19 @@
 .filter {
   font-weight: 900;
 }
+
+.display-options {
+  color: var(--gray);
+}
+
+@media screen and (max-width: 890px) {
+  .display-options {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .right-nav {
+    display: none;
+  }
+}

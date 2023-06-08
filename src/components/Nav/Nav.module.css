@@ -73,9 +73,20 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 800px) {
   .home-button,
   .github-button {
     display: none;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .search > img {
+    display: none;
+  }
+
+  .search,
+  .search input {
+    width: 25px;
   }
 }

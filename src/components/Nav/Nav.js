@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './Nav.module.css';
 import CartSvg from '../../helper-components/CartSvg';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import useDelayedNavigation from '../../utils/useDelayedNavigation';
 
 const Nav = ({
   target,
@@ -11,19 +12,21 @@ const Nav = ({
   openCart,
   cartContent,
   transition,
+  setShowStore,
 }) => {
-  const navigate = useNavigate();
+  const navigateWithDelay = useDelayedNavigation();
 
   return (
     <div className={styles.nav}>
       <div className={styles.left}>
-        <Link to='/' className={`${styles.button} ${styles['home-button']}`}>
-          <img
-            src={`${
-              target === 'game-details' ? '../' : ''
-            }../assets/icons/game-store.svg`}
-            alt=''
-          />
+        <Link
+          onClick={() => {
+            setShowStore && setShowStore(false);
+            navigateWithDelay('/', 200);
+          }}
+          className={`${styles.button} ${styles['home-button']}`}
+        >
+          <img src='/assets/icons/game-store.svg' alt='' />
           <div className={styles['button-name']}>Home</div>
         </Link>
         {target === 'landing' ? (
@@ -31,12 +34,10 @@ const Nav = ({
             className={styles.button}
             onClick={() => {
               transition();
-              setTimeout(() => {
-                navigate('/store');
-              }, 2000);
+              navigateWithDelay('/store', 2000);
             }}
           >
-            <img src='./assets/icons/browse-store.svg' alt='' />
+            <img src='/assets/icons/browse-store.svg' alt='' />
             <div className={styles['button-name']}>Store</div>
           </Link>
         ) : target === 'store' ? (
@@ -50,11 +51,7 @@ const Nav = ({
                 if (e.key === 'Enter') handleSearch();
               }}
             />
-            <img
-              src='./assets/icons/search.svg'
-              alt=''
-              onClick={handleSearch}
-            />
+            <img src='/assets/icons/search.svg' alt='' onClick={handleSearch} />
           </div>
         ) : null}
       </div>
@@ -63,12 +60,7 @@ const Nav = ({
           className={`${styles.button} ${styles['github-button']}`}
           href='https://github.com/TrustInMagic'
         >
-          <img
-            src={`${
-              target === 'game-details' ? '../' : ''
-            }../assets/icons/github.svg`}
-            alt=''
-          />
+          <img src='/assets/icons/github.svg' alt='' />
           <div className={styles['button-name']}>trustinmagic</div>
         </a>
         <div className={styles.button} onClick={openCart}>

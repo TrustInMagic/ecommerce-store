@@ -10,13 +10,15 @@ const GameList = ({
   error,
   display,
   addToCart,
-  cartContent
+  cartContent,
 }) => {
   return (
     <div
       className={
-        display === 'grid'
-          ? styles['grid-collection']
+        typeof games === 'object'
+          ? display === 'grid'
+            ? styles['grid-collection']
+            : styles['row-collection']
           : styles['row-collection']
       }
     >
@@ -31,6 +33,9 @@ const GameList = ({
             )}
             addToCart={addToCart}
             cartContent={cartContent}
+            isInCart={cartContent.some(
+              (iteratedGame) => iteratedGame.name === game.name
+            )}
           />
         ))
       ) : (

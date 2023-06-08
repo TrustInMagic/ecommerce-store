@@ -7,15 +7,14 @@ const PurchaseDetails = ({
   handleWishList,
   wishList,
   addToCart,
-  cartContent,
+  isAddedToCart,
 }) => {
   return (
     <div className={styles['purchase-details']}>
       <div className={styles.price}>${game.price}</div>
       <div
         className={styles['svg-container']}
-        onClick={(e) => {
-          e.preventDefault();
+        onClick={() => {
           handleWishList(game);
         }}
       >
@@ -29,13 +28,12 @@ const PurchaseDetails = ({
         />
       </div>
       <div className={styles.buy}>
-        {cartContent.some((iteratedGame) => iteratedGame.name === game.name) ? (
+        {isAddedToCart ? (
           <div className={styles.added}>Added ✓</div>
         ) : (
           <div
             className={styles.add}
-            onClick={(e) => {
-              e.preventDefault();
+            onClick={() => {
               addToCart(game);
             }}
           >

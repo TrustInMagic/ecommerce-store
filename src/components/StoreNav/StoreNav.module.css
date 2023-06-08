@@ -37,3 +37,9 @@
   filter: invert(10);
   transition: filter 0.3s;
 }
+
+@media screen and (max-width: 600px) {
+  .nav {
+    display: none;
+  }
+}

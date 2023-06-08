@@ -53,3 +53,6 @@
   background-color: #ffffff;
 }
 
+.arrow-nav svg:hover {
+  fill: #ffffff;
+}

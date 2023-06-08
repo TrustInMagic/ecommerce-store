@@ -20,7 +20,7 @@ const FilterNav = ({ filter, clearFilter, changeDisplay, display }) => {
         </button>
       </div>
       <div className={styles['right-nav']}>
-        <span style={{ color: gray }}>Display options:</span>
+        <span className={styles['display-options']}>Display options:</span>
         <div onClick={() => changeDisplay('grid')}>
           <CustomSvg
             fill={display === 'grid' ? white : gray}

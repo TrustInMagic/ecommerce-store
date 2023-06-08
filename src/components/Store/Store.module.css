@@ -1,4 +1,4 @@
-.store {
+.store-container {
   min-height: 100vh;
   padding: 20px 40px;
   background-color: black;
@@ -15,7 +15,7 @@
   margin-left: 80px;
 }
 
-.store h2 {
+.store-container h2 {
   font-size: 3.2rem;
   font-weight: 1000;
 }
@@ -24,5 +24,35 @@
   filter: blur(4px);
 }
 
+@media screen and (max-width: 800px) {
+  .store-container h2 {
+    font-size: 2.5rem;
+  }
+}
 
+@media screen and (max-width: 600px) {
+  .store-container {
+    padding: 20px;
+  }
 
+  .mid-content {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .store-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .mid-content > span {
+    font-size: 0.9rem;
+  }
+}
