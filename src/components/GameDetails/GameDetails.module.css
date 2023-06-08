@@ -1,3 +1,7 @@
+.game-details-container {
+  background-color: black;
+}
+
 .blur {
   filter: blur(4px);
 }
@@ -6,9 +10,10 @@
 
 .game-details {
   padding: 20px 40px;
-  background-color: black;
   color: var(--font-color);
-  height: 100vh;
+  background-color: black;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 .header {
@@ -23,6 +28,7 @@
   color: inherit;
   font-size: 1.5rem;
   font-weight: 900;
+  cursor: pointer;
 }
 
 .game-details h1 {
@@ -36,14 +42,44 @@
   display: grid;
   grid-template-columns: 2fr 0.8fr;
   gap: 30px;
-  height: 70%;
 }
 
 .right-section {
   color: var(--slate-font);
   display: flex;
   flex-direction: column;
+  min-width: 500px;
 }
 
-/* purchase */
+@media screen and (max-width: 1400px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
 
+@media screen and (max-width: 750px) {
+  .game-details h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .right-section {
+    min-width: 200px;
+  }
+
+  .game-details h1 {
+    font-size: 1.5rem;
+  }
+  .game-details {
+    padding: 10px;
+  }
+
+  .header {
+    margin-top: 20px;
+  }
+
+  .content {
+    gap: 10px;
+  }
+}

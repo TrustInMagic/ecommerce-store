@@ -1,21 +1,39 @@
-.content h3 {
-  color: var(--font-color);
+.game-details {
+  margin-bottom: 15px;
+}
+
+.about h3 {
+  color: white;
 }
 
 .about {
   overflow: scroll;
-  max-height: 300px;
+  max-height: 200px;
   background-color: var(--light-black);
   padding: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  position: relative;
   line-height: 1.5;
 }
 
 .description {
   margin-top: 10px;
   font-size: 0.9rem;
+}
+
+.about-container {
+  position: relative;
+}
+
+.about-container:after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  height: 8%;
+  bottom: 0px;
+  backdrop-filter: blur(1px);
+  pointer-events: none;
 }
 
 .about::-webkit-scrollbar {
@@ -25,22 +43,26 @@
 }
 
 .more {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  font-size: 0.7rem;
+}
+
+.extra-details {
   background-color: var(--zinc);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 15px;
-  font-size: 0.9rem;
   display: flex;
   flex-direction: column;
   line-height: 1.8;
+  min-height: 60px;
 }
 
-.show-more {
-  display: block;
-}
-
-.hide-more {
-  display: none;
+.more.show-more {
+  max-height: 400px;
+  transition: max-height 0.5s ease-in;
 }
 
 .handle-more {
@@ -48,8 +70,29 @@
   cursor: pointer;
 }
 
+.more-button {
+  position: absolute;
+}
+
 .website {
   text-decoration: none;
   color: var(--font-color);
   font-weight: 900;
+}
+
+@media screen and (max-width: 580px) {
+  .more {
+    font-size: 0.7rem;
+  }
+  .extra-details {
+    font-size: 0.9rem;
+  }
+
+  .about {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
 }

@@ -1,6 +1,7 @@
 .img-slider {
   position: relative;
-  max-height: 100%;
+  width: 100%;
+  min-height: 60vh;
 }
 
 .img {
@@ -55,4 +56,46 @@
 
 .arrow-nav svg:hover {
   fill: #ffffff;
+}
+
+@media screen and (max-width: 1000px) {
+  .img-slider {
+    min-height: 40vh;
+  }
+
+  .dot-nav {
+    top: 93%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .img-slider {
+    min-height: 30vh;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+  }
+  .previous svg,
+  .next svg {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .right-section {
+    min-width: 200px;
+  }
+
+  .dot {
+    height: 8px;
+    width: 8px;
+  }
+  .previous svg,
+  .next svg {
+    height: 35px;
+    width: 35px;
+  }
 }

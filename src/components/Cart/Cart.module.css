@@ -1,6 +1,5 @@
 .cart {
-  position: absolute;
-  right: 0;
+  position: relative;
   color: var(--font-color);
   height: 100vh;
   width: 350px;
@@ -10,6 +9,7 @@
   justify-content: space-between;
   padding: 20px;
   z-index: 10;
+  transition: transform 1s ease-in-out;
 }
 
 .added-games {
@@ -45,11 +45,23 @@
 }
 
 .visible {
-  transform: scale(1);
+  transform: translateX(0);
 }
 
 .invisible {
-  transform: scale(0);
+  transform: translateX(100%);
+}
+
+.cart-container {
+  position: absolute;
+  height: 100vh;
+  width: 350px;
+  overflow: hidden;
+  right: 0;
+}
+
+.no-pointer {
+  pointer-events: none;
 }
 
 .content {

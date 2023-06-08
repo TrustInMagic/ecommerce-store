@@ -1,25 +1,18 @@
 import React from 'react';
 import styles from './GameCard.module.css';
 import CustomSvg from '../../helper-components/CustomSvg';
-import { useTransition, animated } from '@react-spring/web';
+import { animated } from '@react-spring/web';
 import useDelayedNavigation from '../../utils/useDelayedNavigation';
 import { ShowStoreContext } from '../Store/Store';
+import useComponentTransition from '../../utils/useComponentTransition';
 
 const GameCard = ({ game, handleWishList, isLiked, addToCart, isInCart }) => {
   const navigateWithDelay = useDelayedNavigation();
-
-  const useGameCardTransition = () => {
-    const [showGameCard, setShowGameCard] = React.useState(true);
-    const transition = useTransition(showGameCard, {
-      from: { opacity: 0 },
-      enter: { opacity: 1 },
-      leave: { opacity: 0 },
-    });
-
-    return { transition, setShowGameCard };
-  };
-
-  const { transition } = useGameCardTransition();
+  const { transition } = useComponentTransition(
+    { opacity: 0 },
+    { opacity: 1 },
+    { opacity: 0 }
+  );
   const setShowStore = React.useContext(ShowStoreContext);
 
   return transition((style, item) =>
@@ -28,7 +21,7 @@ const GameCard = ({ game, handleWishList, isLiked, addToCart, isInCart }) => {
         className={styles.card}
         key={game.name}
         onClick={() => {
-          setShowStore(false)
+          setShowStore(false);
           navigateWithDelay(`/store/games/${game.name}`, 200);
         }}
         style={style}

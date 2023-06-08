@@ -6,7 +6,8 @@ import FilterNav from '../FilterNav/FilterNav';
 import games from '../../data-structures/games';
 import GameList from '../GameList/GameList';
 import styles from './Store.module.css';
-import { useTransition, animated } from '@react-spring/web';
+import { animated } from '@react-spring/web';
+import useComponentTransition from '../../utils/useComponentTransition';
 
 export const ShowStoreContext = React.createContext();
 
@@ -25,16 +26,15 @@ const Store = ({
   const [display, setDisplay] = React.useState('grid');
   const [query, setQuery] = React.useState('');
 
-  const useStoreTransition = () => {
-    const [showStore, setShowStore] = React.useState(true);
-    const transition = useTransition(showStore, {
-      from: { x: -300, y: 0, opacity: 0.5 },
-      enter: { x: 0, y: 0, opacity: 1 },
-      leave: { x: 500, y: 0, opacity: 0.5 },
-    });
-
-    return { transition, setShowStore };
-  };
+  const { transition, setShowComponent } = useComponentTransition(
+    {
+      x: -300,
+      y: 0,
+      opacity: 0.5,
+    },
+    { x: 0, y: 0, opacity: 1 },
+    { x: 500, y: 0, opacity: 0.5 }
+  );
 
   const filterBy = (filter) => {
     switch (filter) {
@@ -111,8 +111,6 @@ const Store = ({
     setQuery(message);
   };
 
-  const { transition, setShowStore } = useStoreTransition();
-
   return (
     <>
       {/* adding this overlay element to disable functionality of main section 
@@ -134,20 +132,22 @@ const Store = ({
                 openCart={openCart}
                 cartContent={cartContent}
                 target='store'
-                setShowStore={setShowStore}
+                setShowStore={setShowComponent}
               />
               <div className={styles.content}>
                 <StoreNav filterBy={filterBy} currentFilter={filter} />
                 <div className={styles['mid-content']}>
-                  <h2 className={styles.title}>Trending and interesting</h2>
-                  <span>Based on player counts and ratings</span>
+                  <div className={styles.heading}>
+                    <h2 className={styles.title}>Trending and interesting</h2>
+                    <span>Based on player counts and ratings</span>
+                  </div>
                   <FilterNav
                     filter={filter}
                     clearFilter={clearFilter}
                     changeDisplay={changeDisplay}
                     display={display}
                   />
-                  <ShowStoreContext.Provider value={setShowStore}>
+                  <ShowStoreContext.Provider value={setShowComponent}>
                     <GameList
                       games={displayedGames}
                       wishList={wishList}
