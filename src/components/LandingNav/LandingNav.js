@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './LandingNav.module.css';
 import { Link } from 'react-router-dom';
+import getRandomGameName from '../../utils/random-game-name';
 
 const LandingNav = ({ buttons, title, position }) => {
   return (
@@ -17,8 +18,17 @@ const LandingNav = ({ buttons, title, position }) => {
               <img src={button.iconSrc} alt='' />
               <div className={styles['button-name']}>{button.name}</div>
             </a>
-          ) : (
+          ) : button.name !== 'Play Dice' ? (
             <Link className={styles.button} to={button.href} key={button.name}>
+              <img src={button.iconSrc} alt='' />
+              <div className={styles['button-name']}>{button.name}</div>
+            </Link>
+          ) : (
+            <Link
+              className={styles.button}
+              to={`store/games/${getRandomGameName()}`}
+              key={button.name}
+            >
               <img src={button.iconSrc} alt='' />
               <div className={styles['button-name']}>{button.name}</div>
             </Link>

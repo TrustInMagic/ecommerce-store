@@ -7,7 +7,7 @@ const landingBottomNavButtons = [
   },
   {
     name: 'Play Dice',
-    href: '',
+    href: 'store/games/:gameName',
     iconSrc: './assets/icons/dice.svg',
     internal: true,
   },
@@ -34,7 +34,7 @@ const landingRightNavButtons = [
   },
   {
     name: '404 Page',
-    href: '',
+    href: '/404',
     iconSrc: './assets/icons/404.svg',
     internal: true,
   },

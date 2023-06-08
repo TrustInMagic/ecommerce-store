@@ -5,9 +5,9 @@ import styles from './GameDetails.module.css';
 import PurchaseDetails from '../PurchaseDetails/PurchaseDetails';
 import ImgSlider from '../ImgSlider/ImgSlider';
 import AboutGame from '../AboutGame/AboutGame';
-import useComponentTransition from '../../utils/useComponentTransition';
+import useComponentTransition from '../../utils/custom-hooks/useComponentTransition';
 import { animated } from '@react-spring/web';
-import useDelayedNavigation from '../../utils/useDelayedNavigation';
+import useDelayedNavigation from '../../utils/custom-hooks/useDelayedNavigation';
 import Nav from '../Nav/Nav';
 
 const GameDetails = ({
@@ -83,7 +83,8 @@ const GameDetails = ({
                       wishList={wishList}
                       handleWishList={handleWishList}
                       isAddedToCart={cartContent.some(
-                        (iteratedGame) => iteratedGame.name === displayedGame.name
+                        (iteratedGame) =>
+                          iteratedGame.name === displayedGame.name
                       )}
                     />
                   </div>

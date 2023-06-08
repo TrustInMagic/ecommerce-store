@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './GameCard.module.css';
 import CustomSvg from '../../helper-components/CustomSvg';
 import { animated } from '@react-spring/web';
-import useDelayedNavigation from '../../utils/useDelayedNavigation';
+import useDelayedNavigation from '../../utils/custom-hooks/useDelayedNavigation';
 import { ShowStoreContext } from '../Store/Store';
-import useComponentTransition from '../../utils/useComponentTransition';
+import useComponentTransition from '../../utils/custom-hooks/useComponentTransition';
 
 const GameCard = ({ game, handleWishList, isLiked, addToCart, isInCart }) => {
   const navigateWithDelay = useDelayedNavigation();

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Nav.module.css';
 import CartSvg from '../../helper-components/CartSvg';
 import { Link } from 'react-router-dom';
-import useDelayedNavigation from '../../utils/useDelayedNavigation';
+import useDelayedNavigation from '../../utils/custom-hooks/useDelayedNavigation';
 
 const Nav = ({
   target,
