@@ -1,4 +1,4 @@
-<h1 align="center">🛍️ React E-Commerce Store</h1>
+<h1 align="center">🛍️ E-Commerce Store</h1>
 
 ![main](https://github.com/TrustInMagic/react-ecommerce-store/assets/25888605/1e8c05ba-f835-448a-bbee-2e7e2dbac84c)
 <p align="center">
