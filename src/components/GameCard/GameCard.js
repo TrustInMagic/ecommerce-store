@@ -26,7 +26,7 @@ const GameCard = ({ game, handleWishList, isLiked, addToCart, isInCart }) => {
         }}
         style={style}
       >
-        <img src={game.imgUrl[0]} alt='' />
+        <img src={require(`../../${game.imgUrl[0]}`)} alt='' />
         <div className={styles.content}>
           <div className={styles.buy}>
             {isInCart ? (

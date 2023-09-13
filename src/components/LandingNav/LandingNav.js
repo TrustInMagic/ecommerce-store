@@ -15,12 +15,12 @@ const LandingNav = ({ buttons, title, position }) => {
         {buttons.map((button) => {
           return button.internal === false ? (
             <a className={styles.button} href={button.href} key={button.name}>
-              <img src={button.iconSrc} alt='' />
+              <img src={require(`../../${button.iconSrc}`)} alt='' />
               <div className={styles['button-name']}>{button.name}</div>
             </a>
           ) : button.name !== 'Play Dice' ? (
             <Link className={styles.button} to={button.href} key={button.name}>
-              <img src={button.iconSrc} alt='' />
+              <img src={require(`../../${button.iconSrc}`)} alt='' />
               <div className={styles['button-name']}>{button.name}</div>
             </Link>
           ) : (
@@ -29,7 +29,7 @@ const LandingNav = ({ buttons, title, position }) => {
               to={`store/games/${getRandomGameName()}`}
               key={button.name}
             >
-              <img src={button.iconSrc} alt='' />
+              <img src={require(`../../${button.iconSrc}`)} alt='' />
               <div className={styles['button-name']}>{button.name}</div>
             </Link>
           );

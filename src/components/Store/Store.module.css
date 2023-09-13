@@ -76,3 +76,17 @@
     text-align: center;
   }
 }
+
+@media screen and (max-width: 300px) {
+  .heading > span {
+    display: none;
+  }
+
+  .heading {
+    margin-bottom: 6px;
+  }
+
+  .store-container {
+    padding: 10px
+  }
+}

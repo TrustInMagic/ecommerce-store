@@ -64,3 +64,10 @@
 .svg-container svg {
   transition: fill 0.5s;
 }
+
+@media screen and (max-width: 300px) {
+  .card {
+    min-width: 50px;
+    width: 100%;
+  }
+}

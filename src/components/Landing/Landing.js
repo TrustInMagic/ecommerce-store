@@ -6,8 +6,15 @@ import {
   landingRightNavButtons,
   landingBottomNavButtons,
 } from './landing.config';
+import landingVideo from '../../assets/death-knights-live-wallpaper.mp4';
 
-const Landing = ({ openCart, isCartVisible, cartContent, closeCart, transition }) => {
+const Landing = ({
+  openCart,
+  isCartVisible,
+  cartContent,
+  closeCart,
+  transition,
+}) => {
   return (
     <>
       {/* adding this overlay element to disable functionality of main section 
@@ -17,10 +24,7 @@ const Landing = ({ openCart, isCartVisible, cartContent, closeCart, transition }
       ) : null}
       <div className={`${styles.landing} ${isCartVisible ? styles.blur : ''}`}>
         <video autoPlay muted loop playsInline className={styles.video}>
-          <source
-            src='./assets/death-knights-live-wallpaper.mp4'
-            type='video/mp4'
-          />
+          <source src={landingVideo} type='video/mp4' />
         </video>
         <Nav
           openCart={openCart}

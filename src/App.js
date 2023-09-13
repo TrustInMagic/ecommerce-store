@@ -81,6 +81,12 @@ const App = () => {
 
   const { enableTransition, showBlackScreen } = useBlackScreen();
 
+  React.useEffect(() => {
+    document.addEventListener('scroll', closeCart);
+
+    return () => document.removeEventListener('scroll', closeCart);
+  });
+
   return (
     <div className='app'>
       <Cart

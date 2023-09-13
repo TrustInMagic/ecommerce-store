@@ -90,3 +90,9 @@
     width: 25px;
   }
 }
+
+@media screen and (max-width: 300px) {
+  .nav {
+    font-size: 0.9rem;
+  }
+}

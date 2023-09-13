@@ -3,6 +3,10 @@ import styles from './Nav.module.css';
 import CartSvg from '../../helper-components/CartSvg';
 import { Link } from 'react-router-dom';
 import useDelayedNavigation from '../../utils/custom-hooks/useDelayedNavigation';
+import homeImg from '../../assets/icons/game-store.svg';
+import storeImg from '../../assets/icons/browse-store.svg';
+import searchImg from '../../assets/icons/search.svg';
+import githubImg from '../../assets/icons/github.svg';
 
 const Nav = ({
   target,
@@ -28,7 +32,7 @@ const Nav = ({
           }}
           className={`${styles.button} ${styles['home-button']}`}
         >
-          <img src='assets/icons/game-store.svg' alt='' />
+          <img src={homeImg} alt='' />
           <div className={styles['button-name']}>Home</div>
         </Link>
         {target === 'landing' ? (
@@ -39,7 +43,7 @@ const Nav = ({
               navigateWithDelay('/store', 2000);
             }}
           >
-            <img src='assets/icons/browse-store.svg' alt='' />
+            <img src={storeImg} alt='' />
             <div className={styles['button-name']}>Store</div>
           </Link>
         ) : target === 'store' ? (
@@ -53,7 +57,7 @@ const Nav = ({
                 if (e.key === 'Enter') handleSearch();
               }}
             />
-            <img src='assets/icons/search.svg' alt='' onClick={handleSearch} />
+            <img src={searchImg} alt='' onClick={handleSearch} />
           </div>
         ) : null}
       </div>
@@ -62,7 +66,7 @@ const Nav = ({
           className={`${styles.button} ${styles['github-button']}`}
           href='https://github.com/TrustInMagic'
         >
-          <img src='assets/icons/github.svg' alt='' />
+          <img src={githubImg} alt='' />
           <div className={styles['button-name']}>trustinmagic</div>
         </a>
         <div className={styles.button} onClick={openCart}>

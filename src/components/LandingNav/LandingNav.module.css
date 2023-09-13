@@ -112,3 +112,17 @@ img {
     font-size: 1.5rem;
   }
 }
+
+@media screen and (max-width: 300px) {
+  .right-nav {
+    width: 250px;
+  }
+
+  .bottom-nav {
+    width: 250px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+}

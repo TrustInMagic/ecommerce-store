@@ -60,3 +60,10 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 300px) {
+  .nav button {
+    height: 35px;
+    width: 130px;
+  }
+}

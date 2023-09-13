@@ -17,7 +17,7 @@ const StoreNav = ({ filterBy, currentFilter }) => {
               }}
             >
               <img
-                src={filter.iconSrc}
+                src={require(`../../${filter.iconSrc}`)}
                 alt=''
                 style={
                   currentFilter === filter.name
@@ -41,7 +41,7 @@ const StoreNav = ({ filterBy, currentFilter }) => {
             }}
           >
             <img
-              src={genre.iconSrc}
+              src={require(`../../${genre.iconSrc}`)}
               alt=''
               style={
                 currentFilter === genre.name

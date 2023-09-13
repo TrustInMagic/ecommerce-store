@@ -3,6 +3,7 @@ import styles from './NotFound.module.css';
 import { useNavigate } from 'react-router';
 import useComponentTransition from '../../utils/custom-hooks/useComponentTransition';
 import { animated } from '@react-spring/web';
+import notFound from '../../assets/icons/404.png';
 
 const NotFound = () => {
   const [progress, setProgress] = React.useState(false);
@@ -30,7 +31,7 @@ const NotFound = () => {
       {transition((style, item) =>
         item ? (
           <animated.div className={styles.error} style={style}>
-            <img src='/assets/icons/404.png' alt='' />
+            <img src={notFound} alt='' />
             <div className={styles.text}>
               <h3>
                 <span>/this-page</span> is not available!

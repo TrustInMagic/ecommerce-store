@@ -119,6 +119,25 @@
   }
 
   .landing {
-    padding: 10px
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .main-banner {
+    width: 250px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .landing h1 {
+    font-size: 1.6rem;
+  }
+
+  .landing {
+    overflow-y: hidden;
   }
 }
