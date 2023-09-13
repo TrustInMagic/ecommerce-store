@@ -6,7 +6,7 @@ import {
   landingRightNavButtons,
   landingBottomNavButtons,
 } from './landing.config';
-import landingVideo from '../../assets/death-knights-live-wallpaper.mp4';
+import landingVideo from '../../assets/death-knights-live-wallpaper-compressed.mp4';
 
 const Landing = ({
   openCart,
