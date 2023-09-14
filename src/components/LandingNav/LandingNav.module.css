@@ -126,3 +126,9 @@ img {
     font-size: 1.2rem;
   }
 }
+
+@media screen and (max-height: 860px) {
+  .right-nav {
+    display: none;
+  }
+}

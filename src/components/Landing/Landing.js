@@ -24,7 +24,11 @@ const Landing = ({
       ) : null}
       <div className={`${styles.landing} ${isCartVisible ? styles.blur : ''}`}>
         <video autoPlay muted loop playsInline className={styles.video}>
-          <source src={landingVideo} type='video/mp4' />
+          <source
+            src={landingVideo}
+            type='video/mp4'
+            onLoad={() => console.log('load')}
+          />
         </video>
         <Nav
           openCart={openCart}

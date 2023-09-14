@@ -114,12 +114,12 @@
 }
 
 @media screen and (max-width: 450px) {
-  .content {
-    margin-top: 40px;
-  }
-
   .landing {
     padding: 10px;
+  }
+
+  .content {
+    margin-top: 5px;
   }
 }
 
@@ -136,8 +136,30 @@
   .landing h1 {
     font-size: 1.6rem;
   }
+}
 
-  .landing {
-    overflow-y: hidden;
+@media screen and (max-height: 860px) {
+  .content {
+    margin-top: 10px;
+    height: 80vh;
+  }
+}
+
+@media screen and (max-height: 420px), screen and (max-width: 680px) {
+  .description {
+    display: none;
+  }
+
+  .main-banner {
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .landing h1 {
+    font-size: 1.6rem;
   }
 }

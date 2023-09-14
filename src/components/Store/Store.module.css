@@ -75,18 +75,18 @@
   .heading h2 {
     text-align: center;
   }
-}
 
-@media screen and (max-width: 300px) {
   .heading > span {
     display: none;
   }
+}
 
+@media screen and (max-width: 300px) {
   .heading {
     margin-bottom: 6px;
   }
 
   .store-container {
-    padding: 10px
+    padding: 10px;
   }
 }
