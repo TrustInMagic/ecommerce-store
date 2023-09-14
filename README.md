@@ -9,7 +9,7 @@
 An e-commerce store, imitating a Game Store, built with React. Includes dedicated game pages, a search functionality, genre and rating filters, a like feature and a wishlist. Responsive to the bone.
 
 ## ▶ Demo
-[Live Demo](https://trustinmagic.github.io/react-ecommerce-store/) available. Click "Live Demo" to open it.
+[Live Demo](https://trustinmagic.github.io/ecommerce-store/) available. Click "Live Demo" to open it.
 
 ## Showcase
 You can see images and a GIF of the project in user interaction below. The GIF shows the most common user interactions. <br /> <br />
