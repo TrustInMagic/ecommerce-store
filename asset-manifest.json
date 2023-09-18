@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ecommerce-store/static/css/main.4c886c81.css",
-    "main.js": "/ecommerce-store/static/js/main.4a49a9f5.js",
+    "main.css": "/ecommerce-store/static/css/main.dcc5909b.css",
+    "main.js": "/ecommerce-store/static/js/main.f84f53ac.js",
     "static/media/death-knights-live-wallpaper-compressed.mp4": "/ecommerce-store/static/media/death-knights-live-wallpaper-compressed.bffc0c68bdfa7806a91d.mp4",
     "static/media/gow_4.jpg": "/ecommerce-store/static/media/gow_4.f84e3b1dc2b6510e96c7.jpg",
     "static/media/tomb-rider_1.jpg": "/ecommerce-store/static/media/tomb-rider_1.39cdc5f24570ee87a15d.jpg",
@@ -114,11 +114,11 @@
     "static/media/heart.svg": "/ecommerce-store/static/media/heart.2f8be5e94d3d5c34c7f8.svg",
     "static/media/next-arrow.svg": "/ecommerce-store/static/media/next-arrow.bebd0728f06501cce1bd.svg",
     "static/media/previous-arrow.svg": "/ecommerce-store/static/media/previous-arrow.bd7b7d9c22cff570a6d1.svg",
-    "main.4c886c81.css.map": "/ecommerce-store/static/css/main.4c886c81.css.map",
-    "main.4a49a9f5.js.map": "/ecommerce-store/static/js/main.4a49a9f5.js.map"
+    "main.dcc5909b.css.map": "/ecommerce-store/static/css/main.dcc5909b.css.map",
+    "main.f84f53ac.js.map": "/ecommerce-store/static/js/main.f84f53ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c886c81.css",
-    "static/js/main.4a49a9f5.js"
+    "static/css/main.dcc5909b.css",
+    "static/js/main.f84f53ac.js"
   ]
 }
