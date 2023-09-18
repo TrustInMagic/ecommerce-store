@@ -27,7 +27,7 @@ const Landing = ({
           <source
             src={landingVideo}
             type='video/mp4'
-            onLoad={() => console.log('load')}
+            onLoadedData={() => console.log('loaded')}
           />
         </video>
         <Nav

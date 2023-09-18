@@ -35,7 +35,7 @@ html,
 .app {
   font-size: 1.1rem;
   font-family: 'Nova Flat';
-  min-height: 100vh;
+  height: 100%;
 }
 
 body {
