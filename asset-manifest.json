@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ecommerce-store/static/css/main.dcc5909b.css",
-    "main.js": "/ecommerce-store/static/js/main.f84f53ac.js",
+    "main.css": "/ecommerce-store/static/css/main.9645f221.css",
+    "main.js": "/ecommerce-store/static/js/main.290da7d1.js",
     "static/media/death-knights-live-wallpaper-compressed.mp4": "/ecommerce-store/static/media/death-knights-live-wallpaper-compressed.bffc0c68bdfa7806a91d.mp4",
     "static/media/gow_4.jpg": "/ecommerce-store/static/media/gow_4.f84e3b1dc2b6510e96c7.jpg",
     "static/media/tomb-rider_1.jpg": "/ecommerce-store/static/media/tomb-rider_1.39cdc5f24570ee87a15d.jpg",
@@ -40,6 +40,7 @@
     "static/media/fallout_1.jpg": "/ecommerce-store/static/media/fallout_1.93a48826439818332eb5.jpg",
     "static/media/starcraft_2.jpg": "/ecommerce-store/static/media/starcraft_2.37751668cb6fe1af86d6.jpg",
     "static/media/metro_3.jpg": "/ecommerce-store/static/media/metro_3.1c5dc9ced747ef9ad0a4.jpg",
+    "static/media/background-img.jpg": "/ecommerce-store/static/media/background-img.0e452b2c9fbcfa43229c.jpg",
     "static/media/starcraft_1.jpg": "/ecommerce-store/static/media/starcraft_1.a3716fe9c35cdabf95d7.jpg",
     "static/media/hitman_2.jpg": "/ecommerce-store/static/media/hitman_2.32b07ef93bcf898faee1.jpg",
     "static/media/wow-dragonflight_3.webp": "/ecommerce-store/static/media/wow-dragonflight_3.c1f7475489f8eee84da5.webp",
@@ -96,7 +97,6 @@
     "static/media/twitter.svg": "/ecommerce-store/static/media/twitter.9f8c5f98ee30f39c2e45252ca355590c.svg",
     "static/media/alt-brightness-svgrepo-com.svg": "/ecommerce-store/static/media/alt-brightness-svgrepo-com.a8bc53d002bc25e49386.svg",
     "static/media/shooter.svg": "/ecommerce-store/static/media/shooter.25ca01e1254e5270df5b.svg",
-    "static/media/game-icon.svg": "/ecommerce-store/static/media/game-icon.52b9ae15b58197f5673e.svg",
     "static/media/instagram.svg": "/ecommerce-store/static/media/instagram.b5061d6ad07fb826ead3b716ccf974bc.svg",
     "static/media/racing.svg": "/ecommerce-store/static/media/racing.dda332e3806118a244bd.svg",
     "static/media/wishlist.svg": "/ecommerce-store/static/media/wishlist.ffac8d3276c550d3260b.svg",
@@ -114,11 +114,11 @@
     "static/media/heart.svg": "/ecommerce-store/static/media/heart.2f8be5e94d3d5c34c7f8.svg",
     "static/media/next-arrow.svg": "/ecommerce-store/static/media/next-arrow.bebd0728f06501cce1bd.svg",
     "static/media/previous-arrow.svg": "/ecommerce-store/static/media/previous-arrow.bd7b7d9c22cff570a6d1.svg",
-    "main.dcc5909b.css.map": "/ecommerce-store/static/css/main.dcc5909b.css.map",
-    "main.f84f53ac.js.map": "/ecommerce-store/static/js/main.f84f53ac.js.map"
+    "main.9645f221.css.map": "/ecommerce-store/static/css/main.9645f221.css.map",
+    "main.290da7d1.js.map": "/ecommerce-store/static/js/main.290da7d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.dcc5909b.css",
-    "static/js/main.f84f53ac.js"
+    "static/css/main.9645f221.css",
+    "static/js/main.290da7d1.js"
   ]
 }
