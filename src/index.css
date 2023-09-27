@@ -38,8 +38,15 @@ html,
   height: 100%;
 }
 
+html {
+  height: stretch;
+  height: -webkit-stretch;
+}
+
 body {
   background-color: black;
+  min-height: stretch;
+  min-height: -webkit-stretch;
 }
 
 body::-webkit-scrollbar {

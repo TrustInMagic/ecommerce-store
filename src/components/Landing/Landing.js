@@ -6,7 +6,7 @@ import {
   landingRightNavButtons,
   landingBottomNavButtons,
 } from './landing.config';
-import landingVideo from '../../assets/death-knights-live-wallpaper-compressed.mp4';
+import backgroundVideo from '../../assets/death-knights-live-wallpaper-compressed.mp4';
 
 const Landing = ({
   openCart,
@@ -15,6 +15,26 @@ const Landing = ({
   closeCart,
   transition,
 }) => {
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    (async () => {
+      const videoPromise = new Promise((resolve, reject) => {
+        const element = document.createElement('video');
+        element.src = backgroundVideo;
+        element.oncanplaythrough = resolve;
+        element.onload = resolve;
+        element.onerror = reject;
+      });
+
+      videoPromise
+        .then((data) => {
+          setLoading(false);
+        })
+        .catch((err) => console.error(err));
+    })();
+  }, []);
+
   return (
     <>
       {/* adding this overlay element to disable functionality of main section 
@@ -23,13 +43,10 @@ const Landing = ({
         <div className='overlay' onClick={closeCart}></div>
       ) : null}
       <div className={`${styles.landing} ${isCartVisible ? styles.blur : ''}`}>
-        <video autoPlay muted loop playsInline className={styles.video}>
-          <source
-            src={landingVideo}
-            type='video/mp4'
-            onLoadedData={() => console.log('loaded')}
-          />
+        <video autoPlay muted loop playsInline className={styles.background}>
+          <source src={backgroundVideo} type='video/mp4' />
         </video>
+        {loading && <div className={styles.background}></div>}
         <Nav
           openCart={openCart}
           cartContent={cartContent}

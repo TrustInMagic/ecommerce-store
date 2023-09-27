@@ -1,7 +1,7 @@
 .cart {
   position: relative;
   color: var(--font-color);
-  height: 100vh;
+  height: 100%;
   width: 350px;
   background-color: var(--light-black);
   display: flex;
@@ -54,7 +54,7 @@
 
 .cart-container {
   position: absolute;
-  height: 100vh;
+  height: 100%;
   width: 350px;
   overflow: hidden;
   right: 0;
@@ -92,4 +92,13 @@
 
 .price {
   margin-left: auto;
+}
+
+@media screen and (max-width: 350px) {
+  .cart-container {
+    width: 250px;
+  }
+  .cart {
+    width: 250px;
+  }
 }
